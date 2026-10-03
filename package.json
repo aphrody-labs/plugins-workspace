@@ -3,16 +3,16 @@
   "private": true,
   "license": "MIT OR Apache-2.0",
   "type": "module",
+  "engines": {
+    "bun": ">=1.4.2"
+  },
   "scripts": {
-    "build": "pnpm run -r --parallel --filter !plugins-workspace --filter !\"./plugins/*/examples/**\" --filter !\"./examples/*\" build",
+    "build": "bun run --filter '!plugins-workspace' build",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "ts:check": "pnpm run -r ts:check",
-    "test:api-e2e": "pnpm run --filter \"api-e2e\" e2e",
-    "test:api-e2e:android": "pnpm run --filter \"api-e2e\" e2e:android",
-    "test:api-e2e:ios": "pnpm run --filter \"api-e2e\" e2e:ios",
-    "example:api:dev": "pnpm run --filter \"api\" tauri dev"
+    "ts:check": "tsc --noEmit",
+    "test": "bun test"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
@@ -28,6 +28,5 @@
     "typescript": "6.0.3",
     "typescript-eslint": "8.70.0"
   },
-  "minimumReleaseAge": 4320,
-  "packageManager": "pnpm@12.3.4"
+  "minimumReleaseAge": 4320
 }
