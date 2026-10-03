@@ -8,8 +8,8 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
-import { listen, type UnlistenFn, type Event } from '@tauri-apps/api/event'
+import { invoke } from '@aphrody/api/core'
+import { listen, type UnlistenFn, type Event } from '@aphrody/api/event'
 
 /**
  * Options to associate extra metadata with a log entry.
@@ -149,7 +149,7 @@ async function log(
  *
  * @example
  * ```typescript
- * import { error } from '@tauri-apps/plugin-log';
+ * import { error } from '@aphrody/plugin-log';
  *
  * const err_info = "No connection";
  * const port = 22;
@@ -173,7 +173,7 @@ export async function error(
  *
  * @example
  * ```typescript
- * import { warn } from '@tauri-apps/plugin-log';
+ * import { warn } from '@aphrody/plugin-log';
  *
  * const warn_description = "Invalid Input";
  *
@@ -196,7 +196,7 @@ export async function warn(
  *
  * @example
  * ```typescript
- * import { info } from '@tauri-apps/plugin-log';
+ * import { info } from '@aphrody/plugin-log';
  *
  * const conn_info = { port: 40, speed: 3.20 };
  *
@@ -219,7 +219,7 @@ export async function info(
  *
  * @example
  * ```typescript
- * import { debug } from '@tauri-apps/plugin-log';
+ * import { debug } from '@aphrody/plugin-log';
  *
  * const pos = { x: 3.234, y: -1.223 };
  *
@@ -242,7 +242,7 @@ export async function debug(
  *
  * @example
  * ```typescript
- * import { trace } from '@tauri-apps/plugin-log';
+ * import { trace } from '@aphrody/plugin-log';
  *
  * let pos = { x: 3.234, y: -1.223 };
  *
@@ -272,7 +272,7 @@ type LoggerFn = (fn: RecordPayload) => void
  *
  * @example
  * ```typescript
- * import { attachLogger } from '@tauri-apps/plugin-log';
+ * import { attachLogger } from '@aphrody/plugin-log';
  *
  * const detach = await attachLogger(({ level, message }) => {
  *   console.log(`[${level}] ${message}`);
@@ -307,7 +307,7 @@ export async function attachLogger(fn: LoggerFn): Promise<UnlistenFn> {
  *
  * @example
  * ```typescript
- * import { attachConsole } from '@tauri-apps/plugin-log';
+ * import { attachConsole } from '@aphrody/plugin-log';
  *
  * const detach = await attachConsole();
  *

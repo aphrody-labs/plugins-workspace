@@ -7,15 +7,15 @@ and mobile (Android, iOS). Each plugin has its own spec file, shared by every
 platform, and adding coverage for a new plugin API is normally just dropping in
 one more spec.
 
-It mirrors the [`@tauri-apps/api` e2e suite](https://github.com/tauri-apps/tauri/tree/dev/packages/api-e2e)
-in the core repository; the `@tauri-apps/api` modules themselves are covered there.
+It mirrors the [`@aphrody/api` e2e suite](https://github.com/tauri-apps/tauri/tree/dev/packages/api-e2e)
+in the core repository; the `@aphrody/api` modules themselves are covered there.
 
 ## How it works
 
-- The example app is built with `withGlobalTauri: true`, so the `@tauri-apps/api` surface
+- The example app is built with `withGlobalTauri: true`, so the `@aphrody/api` surface
   is reachable on `window.__TAURI__` inside the webview, and every plugin's `api-iife.js`
   registers its API next to it (`window.__TAURI__.fs`, `window.__TAURI__.clipboardManager`,
-  …, the package name without the `@tauri-apps/plugin-` prefix, camel-cased).
+  …, the package name without the `@aphrody/plugin-` prefix, camel-cased).
 - On desktop, WebdriverIO drives the app through [`@crabnebula/tauri-driver`](https://www.npmjs.com/package/@crabnebula/tauri-driver),
   which bridges the WebDriver protocol to each platform's webview:
   - **macOS** — the CrabNebula Webdriver, which needs [`tauri-plugin-automation`](https://crates.io/crates/tauri-plugin-automation)

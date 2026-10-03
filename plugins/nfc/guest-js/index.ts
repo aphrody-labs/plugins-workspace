@@ -10,7 +10,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * Record Type Definition (RTD) of an NDEF well known text record, the `"T"` (`0x54`) byte.
@@ -102,7 +102,7 @@ export type ScanKind =
        * Examples
        *
        * ```ts
-       * import type { TechKind } from "@tauri-apps/plugin-nfc"
+       * import type { TechKind } from "@aphrody/plugin-nfc"
        *
        * const techLists = [
        *  // capture anything using NfcF
@@ -226,7 +226,7 @@ export interface NFCRecord {
  *
  * @example
  * ```typescript
- * import { record, NFCTypeNameFormat, write } from '@tauri-apps/plugin-nfc';
+ * import { record, NFCTypeNameFormat, write } from '@aphrody/plugin-nfc';
  * const mimeRecord = record(NFCTypeNameFormat.Media, 'text/plain', '', 'hello world');
  * await write([mimeRecord], { kind: { type: 'ndef' } });
  * ```
@@ -267,7 +267,7 @@ export function record(
  *
  * @example
  * ```typescript
- * import { textRecord, write } from '@tauri-apps/plugin-nfc';
+ * import { textRecord, write } from '@aphrody/plugin-nfc';
  * await write([textRecord('hello world')], { kind: { type: 'ndef' } });
  * ```
  *
@@ -359,7 +359,7 @@ function encodeURI(uri: string): number[] {
  *
  * @example
  * ```typescript
- * import { uriRecord, write } from '@tauri-apps/plugin-nfc';
+ * import { uriRecord, write } from '@aphrody/plugin-nfc';
  * await write([uriRecord('https://tauri.app')], { kind: { type: 'ndef' } });
  * ```
  *
@@ -390,7 +390,7 @@ function mapScanKind(kind: ScanKind): Record<string, unknown> {
  *
  * @example
  * ```typescript
- * import { scan } from '@tauri-apps/plugin-nfc';
+ * import { scan } from '@aphrody/plugin-nfc';
  * const tag = await scan({ type: 'tag' });
  * ```
  *
@@ -419,7 +419,7 @@ export async function scan(
  *
  * @example
  * ```typescript
- * import { uriRecord, write } from '@tauri-apps/plugin-nfc';
+ * import { uriRecord, write } from '@aphrody/plugin-nfc';
  * await write([uriRecord('https://tauri.app')], { kind: { type: 'ndef' } });
  * ```
  *
@@ -453,7 +453,7 @@ export async function write(
  *
  * @example
  * ```typescript
- * import { isAvailable } from '@tauri-apps/plugin-nfc';
+ * import { isAvailable } from '@aphrody/plugin-nfc';
  * const canScan = await isAvailable();
  * ```
  *

@@ -36,11 +36,11 @@ You can install the JavaScript Guest bindings using your preferred JavaScript pa
 <!-- Add the branch for installations using git! -->
 
 ```sh
-pnpm add @tauri-apps/plugin-opener
+pnpm add @aphrody/plugin-opener
 # or
-npm add @tauri-apps/plugin-opener
+npm add @aphrody/plugin-opener
 # or
-yarn add @tauri-apps/plugin-opener
+yarn add @aphrody/plugin-opener
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { openUrl, openPath, revealItemInDir } from '@tauri-apps/plugin-opener'
+import { openUrl, openPath, revealItemInDir } from '@aphrody/plugin-opener'
 
 // Opens the URL in the default browser
 await openUrl('https://example.com')

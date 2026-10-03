@@ -38,11 +38,11 @@ You can install the JavaScript Guest bindings using your preferred JavaScript pa
 <!-- Add the branch for installations using git! -->
 
 ```sh
-pnpm add @tauri-apps/plugin-haptics
+pnpm add @aphrody/plugin-haptics
 # or
-npm add @tauri-apps/plugin-haptics
+npm add @aphrody/plugin-haptics
 # or
-yarn add @tauri-apps/plugin-haptics
+yarn add @aphrody/plugin-haptics
 ```
 
 ## Usage
@@ -81,7 +81,7 @@ import {
   impactFeedback,
   notificationFeedback,
   selectionFeedback
-} from '@tauri-apps/plugin-haptics'
+} from '@aphrody/plugin-haptics'
 
 await vibrate(1)
 await impactFeedback('medium')

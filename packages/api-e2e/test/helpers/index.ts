@@ -3,38 +3,38 @@
 // SPDX-License-Identifier: MIT
 
 import { browser } from '@wdio/globals'
-import type * as TauriApi from '@tauri-apps/api'
-import type * as Autostart from '@tauri-apps/plugin-autostart'
-import type * as BarcodeScanner from '@tauri-apps/plugin-barcode-scanner'
-import type * as Biometric from '@tauri-apps/plugin-biometric'
-import type * as Cli from '@tauri-apps/plugin-cli'
-import type * as ClipboardManager from '@tauri-apps/plugin-clipboard-manager'
-import type * as DeepLink from '@tauri-apps/plugin-deep-link'
-import type * as Dialog from '@tauri-apps/plugin-dialog'
-import type * as Fs from '@tauri-apps/plugin-fs'
-import type * as Geolocation from '@tauri-apps/plugin-geolocation'
-import type * as GlobalShortcut from '@tauri-apps/plugin-global-shortcut'
-import type * as Haptics from '@tauri-apps/plugin-haptics'
-import type * as Http from '@tauri-apps/plugin-http'
-import type * as Log from '@tauri-apps/plugin-log'
-import type * as Nfc from '@tauri-apps/plugin-nfc'
-import type * as Notification from '@tauri-apps/plugin-notification'
-import type * as Opener from '@tauri-apps/plugin-opener'
-import type * as Os from '@tauri-apps/plugin-os'
-import type * as Positioner from '@tauri-apps/plugin-positioner'
-import type * as Process from '@tauri-apps/plugin-process'
-import type * as Shell from '@tauri-apps/plugin-shell'
-import type * as Sql from '@tauri-apps/plugin-sql'
-import type * as Store from '@tauri-apps/plugin-store'
-import type * as Updater from '@tauri-apps/plugin-updater'
-import type * as Upload from '@tauri-apps/plugin-upload'
-import type * as WebSocket from '@tauri-apps/plugin-websocket'
-import type * as WindowState from '@tauri-apps/plugin-window-state'
+import type * as TauriApi from '@aphrody/api'
+import type * as Autostart from '@aphrody/plugin-autostart'
+import type * as BarcodeScanner from '@aphrody/plugin-barcode-scanner'
+import type * as Biometric from '@aphrody/plugin-biometric'
+import type * as Cli from '@aphrody/plugin-cli'
+import type * as ClipboardManager from '@aphrody/plugin-clipboard-manager'
+import type * as DeepLink from '@aphrody/plugin-deep-link'
+import type * as Dialog from '@aphrody/plugin-dialog'
+import type * as Fs from '@aphrody/plugin-fs'
+import type * as Geolocation from '@aphrody/plugin-geolocation'
+import type * as GlobalShortcut from '@aphrody/plugin-global-shortcut'
+import type * as Haptics from '@aphrody/plugin-haptics'
+import type * as Http from '@aphrody/plugin-http'
+import type * as Log from '@aphrody/plugin-log'
+import type * as Nfc from '@aphrody/plugin-nfc'
+import type * as Notification from '@aphrody/plugin-notification'
+import type * as Opener from '@aphrody/plugin-opener'
+import type * as Os from '@aphrody/plugin-os'
+import type * as Positioner from '@aphrody/plugin-positioner'
+import type * as Process from '@aphrody/plugin-process'
+import type * as Shell from '@aphrody/plugin-shell'
+import type * as Sql from '@aphrody/plugin-sql'
+import type * as Store from '@aphrody/plugin-store'
+import type * as Updater from '@aphrody/plugin-updater'
+import type * as Upload from '@aphrody/plugin-upload'
+import type * as WebSocket from '@aphrody/plugin-websocket'
+import type * as WindowState from '@aphrody/plugin-window-state'
 
 /**
  * The plugin APIs the example registers on every platform, keyed by the name
  * each plugin's `api-iife.js` defines on `window.__TAURI__` (the package name
- * without the `@tauri-apps/plugin-` prefix, camel-cased). `sql` and `websocket`
+ * without the `@aphrody/plugin-` prefix, camel-cased). `sql` and `websocket`
  * only have a default export, so their global is that class itself.
  */
 export interface CommonPluginApi {
@@ -81,7 +81,7 @@ export interface MobilePluginApi {
  */
 export type PluginApi = CommonPluginApi & DesktopPluginApi & MobilePluginApi
 
-/** The `@tauri-apps/api` surface plus every plugin, as exposed on `window.__TAURI__`. */
+/** The `@aphrody/api` surface plus every plugin, as exposed on `window.__TAURI__`. */
 export type Api = typeof TauriApi & PluginApi
 
 /** OS the app under test runs on. */
@@ -266,7 +266,7 @@ export interface DescribePluginOptions {
 }
 
 /**
- * `describe` wrapper keyed by plugin name (the `@tauri-apps/plugin-*` suffix).
+ * `describe` wrapper keyed by plugin name (the `@aphrody/plugin-*` suffix).
  * Any plugin listed in the comma-separated `E2E_SKIP` env var
  * (e.g. `E2E_SKIP=clipboard-manager,global-shortcut`) is skipped.
  */
@@ -285,7 +285,7 @@ export function describePlugin(
     typeof optionsOrFn === 'function'
       ? [{} as DescribePluginOptions, optionsOrFn]
       : [optionsOrFn, maybeFn!]
-  const title = `@tauri-apps/plugin-${plugin}`
+  const title = `@aphrody/plugin-${plugin}`
   if (
     skippedModules.includes(plugin)
     || (options.desktopOnly && isMobile)

@@ -9,8 +9,8 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
-import type { TrayIconEvent } from '@tauri-apps/api/tray'
+import { invoke } from '@aphrody/api/core'
+import type { TrayIconEvent } from '@aphrody/api/tray'
 
 /**
  * Well known window positions.
@@ -72,7 +72,7 @@ export enum Position {
  *
  * @example
  * ```typescript
- * import { moveWindow, Position } from '@tauri-apps/plugin-positioner'
+ * import { moveWindow, Position } from '@aphrody/plugin-positioner'
  *
  * await moveWindow(Position.TopRight)
  * ```
@@ -94,7 +94,7 @@ export async function moveWindow(to: Position): Promise<void> {
  *
  * @example
  * ```typescript
- * import { moveWindowConstrained, Position } from '@tauri-apps/plugin-positioner'
+ * import { moveWindowConstrained, Position } from '@aphrody/plugin-positioner'
  *
  * await moveWindowConstrained(Position.TrayCenter)
  * ```
@@ -119,8 +119,8 @@ export async function moveWindowConstrained(to: Position): Promise<void> {
  *
  * @example
  * ```typescript
- * import { handleIconState } from '@tauri-apps/plugin-positioner'
- * import { TrayIcon, type TrayIconEvent } from '@tauri-apps/api/tray'
+ * import { handleIconState } from '@aphrody/plugin-positioner'
+ * import { TrayIcon, type TrayIconEvent } from '@aphrody/api/tray'
  *
  * const action = async (event: TrayIconEvent) => {
  *   await handleIconState(event)

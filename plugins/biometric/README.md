@@ -36,11 +36,11 @@ You can install the JavaScript Guest bindings using your preferred JavaScript pa
 <!-- Add the branch for installations using git! -->
 
 ```sh
-pnpm add @tauri-apps/plugin-biometric
+pnpm add @aphrody/plugin-biometric
 # or
-npm add @tauri-apps/plugin-biometric
+npm add @aphrody/plugin-biometric
 # or
-yarn add @tauri-apps/plugin-biometric
+yarn add @aphrody/plugin-biometric
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { authenticate } from '@tauri-apps/plugin-biometric'
+import { authenticate } from '@aphrody/plugin-biometric'
 await authenticate('Open your wallet')
 ```
 

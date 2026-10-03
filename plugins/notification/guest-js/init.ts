@@ -13,8 +13,8 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
-import type { PermissionState } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
+import type { PermissionState } from '@aphrody/api/core'
 import type { Options } from './index'
 ;(function () {
   let permissionSettable = false

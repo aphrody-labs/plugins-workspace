@@ -36,11 +36,11 @@ tauri-plugin-positioner = { git = "https://github.com/tauri-apps/plugins-workspa
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-positioner
+pnpm add @aphrody/plugin-positioner
 # or
-npm add @tauri-apps/plugin-positioner
+npm add @aphrody/plugin-positioner
 # or
-yarn add @tauri-apps/plugin-positioner
+yarn add @aphrody/plugin-positioner
 ```
 
 ## Usage
@@ -88,7 +88,7 @@ import {
   moveWindow,
   Position,
   handleIconState,
-} from "@tauri-apps/plugin-positioner";
+} from "@aphrody/plugin-positioner";
 
 const action = async (event: TrayIconEvent) => {
   // add the handle in the action to update the state
@@ -107,7 +107,7 @@ const tray = await TrayIcon.new({ id: "main", action });
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { moveWindow, Position } from '@tauri-apps/plugin-positioner'
+import { moveWindow, Position } from '@aphrody/plugin-positioner'
 
 moveWindow(Position.TopRight)
 ```

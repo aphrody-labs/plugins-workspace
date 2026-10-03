@@ -12,9 +12,9 @@ import {
   invoke,
   requestPermissions as requestPermissions_,
   checkPermissions as checkPermissions_
-} from '@tauri-apps/api/core'
+} from '@aphrody/api/core'
 
-export type { PermissionState } from '@tauri-apps/api/core'
+export type { PermissionState } from '@aphrody/api/core'
 
 /**
  * The barcode symbologies that can be scanned, or used to restrict a scan via {@link ScanOptions.formats}.
@@ -138,7 +138,7 @@ export interface Scanned {
  *
  * @example
  * ```typescript
- * import { scan, Format } from '@tauri-apps/plugin-barcode-scanner';
+ * import { scan, Format } from '@aphrody/plugin-barcode-scanner';
  *
  * const scanned = await scan({ windowed: true, formats: [Format.QRCode] });
  * ```
@@ -156,7 +156,7 @@ export async function scan(options?: ScanOptions): Promise<Scanned> {
  *
  * @example
  * ```typescript
- * import { cancel } from '@tauri-apps/plugin-barcode-scanner';
+ * import { cancel } from '@aphrody/plugin-barcode-scanner';
  *
  * await cancel();
  * ```
@@ -172,7 +172,7 @@ export async function cancel(): Promise<void> {
  *
  * @example
  * ```typescript
- * import { checkPermissions } from '@tauri-apps/plugin-barcode-scanner';
+ * import { checkPermissions } from '@aphrody/plugin-barcode-scanner';
  *
  * const permissionState = await checkPermissions();
  * ```
@@ -191,7 +191,7 @@ export async function checkPermissions(): Promise<PermissionState> {
  *
  * @example
  * ```typescript
- * import { requestPermissions } from '@tauri-apps/plugin-barcode-scanner';
+ * import { requestPermissions } from '@aphrody/plugin-barcode-scanner';
  *
  * const permissionState = await requestPermissions();
  * ```
@@ -210,7 +210,7 @@ export async function requestPermissions(): Promise<PermissionState> {
  *
  * @example
  * ```typescript
- * import { openAppSettings } from '@tauri-apps/plugin-barcode-scanner';
+ * import { openAppSettings } from '@aphrody/plugin-barcode-scanner';
  *
  * await openAppSettings();
  * ```

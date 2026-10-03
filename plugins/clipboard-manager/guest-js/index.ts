@@ -8,14 +8,14 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
-import { Image, transformImage } from '@tauri-apps/api/image'
+import { invoke } from '@aphrody/api/core'
+import { Image, transformImage } from '@aphrody/api/image'
 
 /**
  * Writes plain text to the clipboard.
  * @example
  * ```typescript
- * import { writeText, readText } from '@tauri-apps/plugin-clipboard-manager';
+ * import { writeText, readText } from '@aphrody/plugin-clipboard-manager';
  * await writeText('Tauri is awesome!');
  * assert(await readText(), 'Tauri is awesome!');
  * ```
@@ -41,7 +41,7 @@ async function writeText(
  * Gets the clipboard content as plain text.
  * @example
  * ```typescript
- * import { readText } from '@tauri-apps/plugin-clipboard-manager';
+ * import { readText } from '@aphrody/plugin-clipboard-manager';
  * const clipboardText = await readText();
  * ```
  * @returns A promise resolving to the clipboard contents as plain text.
@@ -60,7 +60,7 @@ async function readText(): Promise<string> {
  *
  * @example
  * ```typescript
- * import { writeImage } from '@tauri-apps/plugin-clipboard-manager';
+ * import { writeImage } from '@aphrody/plugin-clipboard-manager';
  * const buffer = [
  *   // A red pixel
  *   255, 0, 0, 255,
@@ -93,7 +93,7 @@ async function writeImage(
  *
  * @example
  * ```typescript
- * import { readImage } from '@tauri-apps/plugin-clipboard-manager';
+ * import { readImage } from '@aphrody/plugin-clipboard-manager';
  *
  * const clipboardImage = await readImage();
  * const blob = new Blob([await clipboardImage.rgba()], { type: 'image' })
@@ -117,7 +117,7 @@ async function readImage(): Promise<Image> {
  *
  * @example
  * ```typescript
- * import { writeHtml } from '@tauri-apps/plugin-clipboard-manager';
+ * import { writeHtml } from '@aphrody/plugin-clipboard-manager';
  * await writeHtml('<h1>Tauri is awesome!</h1>', 'plaintext');
  * // The following will write "<h1>Tauri is awesome</h1>" as plain text
  * await writeHtml('<h1>Tauri is awesome!</h1>', '<h1>Tauri is awesome</h1>');
@@ -147,7 +147,7 @@ async function writeHtml(html: string, altText?: string): Promise<void> {
  *
  * @example
  * ```typescript
- * import { clear } from '@tauri-apps/plugin-clipboard-manager';
+ * import { clear } from '@aphrody/plugin-clipboard-manager';
  * await clear();
  * ```
  * @since 2.0.0

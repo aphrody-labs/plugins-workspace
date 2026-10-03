@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Theme, Window } from '@tauri-apps/api/window'
-  import { ask } from '@tauri-apps/plugin-dialog'
+  import type { Theme, Window } from '@aphrody/api/window'
+  import { ask } from '@aphrody/plugin-dialog'
   import { onMount } from 'svelte'
 
   let {

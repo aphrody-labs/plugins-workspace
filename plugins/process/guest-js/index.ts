@@ -7,13 +7,13 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * Exits immediately with the given `exitCode`.
  * @example
  * ```typescript
- * import { exit } from '@tauri-apps/plugin-process';
+ * import { exit } from '@aphrody/plugin-process';
  * await exit(1);
  * ```
  *
@@ -30,7 +30,7 @@ async function exit(code = 0): Promise<void> {
  * Exits the current instance of the app then relaunches it.
  * @example
  * ```typescript
- * import { relaunch } from '@tauri-apps/plugin-process';
+ * import { relaunch } from '@aphrody/plugin-process';
  * await relaunch();
  * ```
  *

@@ -1,7 +1,7 @@
 <script>
-  import * as fs from '@tauri-apps/plugin-fs'
-  import * as os from '@tauri-apps/plugin-os'
-  import { convertFileSrc } from '@tauri-apps/api/core'
+  import * as fs from '@aphrody/plugin-fs'
+  import * as os from '@aphrody/plugin-os'
+  import { convertFileSrc } from '@aphrody/api/core'
   import { arrayBufferToBase64 } from '../lib/utils'
   import { onDestroy, onMount } from 'svelte'
 

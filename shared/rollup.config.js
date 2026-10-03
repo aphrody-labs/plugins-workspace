@@ -30,10 +30,10 @@ export function createConfig(options = {}) {
   const pkg = JSON.parse(readFileSync(join(cwd(), 'package.json'), 'utf8'))
 
   const pluginJsName = pkg.name
-    .replace('@tauri-apps/plugin-', '')
+    .replace('@aphrody/plugin-', '')
     .replace(/-./g, (x) => x[1].toUpperCase())
   const iifeVarName = `__TAURI_PLUGIN_${pkg.name
-    .replace('@tauri-apps/plugin-', '')
+    .replace('@aphrody/plugin-', '')
     .replace('-', (x) => '_')
     .toUpperCase()}__`
 
@@ -79,14 +79,14 @@ export function createConfig(options = {}) {
         file: 'api-iife.js',
         // The global API script only ever runs with `withGlobalTauri`, where the
         // core API is already on `window.__TAURI__` (it is injected before any
-        // plugin script), so resolve `@tauri-apps/api/<module>` to
+        // plugin script), so resolve `@aphrody/api/<module>` to
         // `window.__TAURI__.<module>` instead of bundling a private copy. This
         // keeps the plugin on the same `Image`, `Resource`, `Channel`, ... classes
         // as the app's `window.__TAURI__`, so `instanceof` checks like
         // `transformImage` work on values crossing the two.
         globals: (id) =>
-          id.startsWith('@tauri-apps/api/')
-            ? `window.__TAURI__.${id.slice('@tauri-apps/api/'.length)}`
+          id.startsWith('@aphrody/api/')
+            ? `window.__TAURI__.${id.slice('@aphrody/api/'.length)}`
             : id
       },
       external: [/^@tauri-apps\/api\//],

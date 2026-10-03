@@ -34,11 +34,11 @@ tauri-plugin-notification = { git = "https://github.com/tauri-apps/plugins-works
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-notification
+pnpm add @aphrody/plugin-notification
 # or
-npm add @tauri-apps/plugin-notification
+npm add @aphrody/plugin-notification
 # or
-yarn add @tauri-apps/plugin-notification
+yarn add @aphrody/plugin-notification
 ```
 
 ## Usage
@@ -78,7 +78,7 @@ import {
   isPermissionGranted,
   requestPermission,
   sendNotification
-} from '@tauri-apps/plugin-notification'
+} from '@aphrody/plugin-notification'
 
 async function checkPermission() {
   if (!(await isPermissionGranted())) {
@@ -100,8 +100,8 @@ export async function enqueueNotification(title, body) {
 You can add sound to your notifications on all platforms (desktop and mobile):
 
 ```javascript
-import { sendNotification } from '@tauri-apps/plugin-notification'
-import { platform } from '@tauri-apps/api/os'
+import { sendNotification } from '@aphrody/plugin-notification'
+import { platform } from '@aphrody/api/os'
 
 // Basic notification with sound
 sendNotification({

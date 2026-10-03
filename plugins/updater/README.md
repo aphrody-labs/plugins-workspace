@@ -35,11 +35,11 @@ tauri-plugin-updater = { git = "https://github.com/tauri-apps/plugins-workspace"
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-updater
+pnpm add @aphrody/plugin-updater
 # or
-npm add @tauri-apps/plugin-updater
+npm add @aphrody/plugin-updater
 # or
-yarn add @tauri-apps/plugin-updater
+yarn add @aphrody/plugin-updater
 ```
 
 ## Usage
@@ -64,8 +64,8 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { check } from '@tauri-apps/plugin-updater'
-import { relaunch } from '@tauri-apps/plugin-process'
+import { check } from '@aphrody/plugin-updater'
+import { relaunch } from '@aphrody/plugin-process'
 const update = await check()
 if (update) {
   await update.downloadAndInstall()

@@ -13,7 +13,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 // open <a href="..."> links with the API
 function openLinks(): void {

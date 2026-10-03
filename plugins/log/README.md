@@ -36,11 +36,11 @@ If you want the single instance mechanism to only trigger for semver compatible 
 Then you can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-log
+pnpm add @aphrody/plugin-log
 # or
-npm add @tauri-apps/plugin-log
+npm add @aphrody/plugin-log
 # or
-yarn add @tauri-apps/plugin-log
+yarn add @aphrody/plugin-log
 ```
 
 ## Usage
@@ -83,7 +83,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { trace, info, error, attachConsole } from '@tauri-apps/plugin-log'
+import { trace, info, error, attachConsole } from '@aphrody/plugin-log'
 
 // with TargetKind::Webview enabled this function will print logs to the browser console
 const detach = await attachConsole()

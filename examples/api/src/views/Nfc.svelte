@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import { write, scan, textRecord, uriRecord } from "@tauri-apps/plugin-nfc";
-  import * as os from "@tauri-apps/plugin-os";
+  import { write, scan, textRecord, uriRecord } from "@aphrody/plugin-nfc";
+  import * as os from "@aphrody/plugin-os";
 
   export let onMessage;
   const decoder = new TextDecoder();

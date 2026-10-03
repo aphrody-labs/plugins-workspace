@@ -1,5 +1,5 @@
 <script>
-  import { sendNotification } from '@tauri-apps/plugin-notification'
+  import { sendNotification } from '@aphrody/plugin-notification'
   export let onMessage
 
   let sound = ''

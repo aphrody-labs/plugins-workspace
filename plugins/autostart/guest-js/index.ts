@@ -8,13 +8,13 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * Checks whether autostart is enabled for the application.
  * @example
  * ```typescript
- * import { isEnabled } from '@tauri-apps/plugin-autostart';
+ * import { isEnabled } from '@aphrody/plugin-autostart';
  * const enabled = await isEnabled();
  * ```
  *
@@ -29,7 +29,7 @@ export async function isEnabled(): Promise<boolean> {
  * Enables autostart for the application.
  * @example
  * ```typescript
- * import { enable } from '@tauri-apps/plugin-autostart';
+ * import { enable } from '@aphrody/plugin-autostart';
  * await enable();
  * ```
  *
@@ -43,7 +43,7 @@ export async function enable(): Promise<void> {
  * Disables autostart for the application.
  * @example
  * ```typescript
- * import { disable } from '@tauri-apps/plugin-autostart';
+ * import { disable } from '@aphrody/plugin-autostart';
  * await disable();
  * ```
  *

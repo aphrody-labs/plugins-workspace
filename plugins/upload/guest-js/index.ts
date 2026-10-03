@@ -9,7 +9,7 @@
  * @module
  */
 
-import { invoke, Channel } from '@tauri-apps/api/core'
+import { invoke, Channel } from '@aphrody/api/core'
 
 /**
  * The payload sent to a {@link ProgressHandler} while an upload or download is in progress.
@@ -96,7 +96,7 @@ function headersToRust(
  *
  * @example
  * ```typescript
- * import { upload, HttpMethod } from '@tauri-apps/plugin-upload';
+ * import { upload, HttpMethod } from '@aphrody/plugin-upload';
  * const response = await upload(
  *   'https://example.com/file-upload',
  *   './path/to/my/file.txt',
@@ -140,7 +140,7 @@ async function upload(
  *
  * @example
  * ```typescript
- * import { download } from '@tauri-apps/plugin-upload';
+ * import { download } from '@aphrody/plugin-upload';
  * await download(
  *   'https://example.com/file-download-link',
  *   './path/to/save/my/file.txt',

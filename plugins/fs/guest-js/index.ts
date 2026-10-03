@@ -12,7 +12,7 @@
  *
  * @example
  * ```typescript
- * import { open } from '@tauri-apps/plugin-fs';
+ * import { open } from '@aphrody/plugin-fs';
  *
  * const file = await open('file:///path/to/file.txt');
  * await file.close();
@@ -85,8 +85,8 @@
  * @module
  */
 
-import { BaseDirectory } from '@tauri-apps/api/path'
-import { Channel, invoke, Resource } from '@tauri-apps/api/core'
+import { BaseDirectory } from '@aphrody/api/path'
+import { Channel, invoke, Resource } from '@aphrody/api/core'
 
 /**
  * Defines how the offset given to {@linkcode FileHandle.seek} is interpreted.
@@ -319,7 +319,7 @@ class FileHandle extends Resource {
    *
    * @example
    * ```typescript
-   * import { open, BaseDirectory } from "@tauri-apps/plugin-fs"
+   * import { open, BaseDirectory } from "@aphrody/plugin-fs"
    * // if "$APPCONFIG/foo/bar.txt" contains the text "hello world":
    * const file = await open("foo/bar.txt", { baseDir: BaseDirectory.AppConfig });
    * const buf = new Uint8Array(100);
@@ -369,7 +369,7 @@ class FileHandle extends Resource {
    *
    * @example
    * ```typescript
-   * import { open, SeekMode, BaseDirectory } from '@tauri-apps/plugin-fs';
+   * import { open, SeekMode, BaseDirectory } from '@aphrody/plugin-fs';
    *
    * // Given hello.txt pointing to file with "Hello world", which is 11 bytes long:
    * const file = await open('hello.txt', { read: true, write: true, truncate: true, create: true, baseDir: BaseDirectory.AppLocalData });
@@ -403,7 +403,7 @@ class FileHandle extends Resource {
    *
    * @example
    * ```typescript
-   * import { open, BaseDirectory } from '@tauri-apps/plugin-fs';
+   * import { open, BaseDirectory } from '@aphrody/plugin-fs';
    * const file = await open("file.txt", { read: true, baseDir: BaseDirectory.AppLocalData });
    * const fileInfo = await file.stat();
    * console.log(fileInfo.isFile); // true
@@ -427,7 +427,7 @@ class FileHandle extends Resource {
    *
    * @example
    * ```typescript
-   * import { open, BaseDirectory } from '@tauri-apps/plugin-fs';
+   * import { open, BaseDirectory } from '@aphrody/plugin-fs';
    *
    * // truncate the entire file
    * const file = await open("my_file.txt", { read: true, write: true, create: true, baseDir: BaseDirectory.AppLocalData });
@@ -463,7 +463,7 @@ class FileHandle extends Resource {
    *
    * @example
    * ```typescript
-   * import { open, write, BaseDirectory } from '@tauri-apps/plugin-fs';
+   * import { open, write, BaseDirectory } from '@aphrody/plugin-fs';
    * const encoder = new TextEncoder();
    * const data = encoder.encode("Hello world");
    * const file = await open("bar.txt", { write: true, baseDir: BaseDirectory.AppLocalData });
@@ -499,7 +499,7 @@ interface CreateOptions {
  *
  * @example
  * ```typescript
- * import { create, BaseDirectory } from "@tauri-apps/plugin-fs"
+ * import { create, BaseDirectory } from "@aphrody/plugin-fs"
  * const file = await create("foo/bar.txt", { baseDir: BaseDirectory.AppConfig });
  * await file.write(new TextEncoder().encode("Hello world"));
  * await file.close();
@@ -589,7 +589,7 @@ interface OpenOptions {
  *
  * @example
  * ```typescript
- * import { open, BaseDirectory } from "@tauri-apps/plugin-fs"
+ * import { open, BaseDirectory } from "@aphrody/plugin-fs"
  * const file = await open("foo/bar.txt", { read: true, write: true, baseDir: BaseDirectory.AppLocalData });
  * // Do work with file
  * await file.close();
@@ -632,7 +632,7 @@ interface CopyFileOptions {
  * Copies the contents and permissions of one file to another specified path, by default creating a new file if needed, else overwriting.
  * @example
  * ```typescript
- * import { copyFile, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { copyFile, BaseDirectory } from '@aphrody/plugin-fs';
  * await copyFile('app.conf', 'app.conf.bk', { fromPathBaseDir: BaseDirectory.AppConfig, toPathBaseDir: BaseDirectory.AppConfig });
  * ```
  *
@@ -680,7 +680,7 @@ interface MkdirOptions {
  * Creates a new directory with the specified path.
  * @example
  * ```typescript
- * import { mkdir, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { mkdir, BaseDirectory } from '@aphrody/plugin-fs';
  * await mkdir('users', { baseDir: BaseDirectory.AppLocalData });
  * ```
  *
@@ -734,8 +734,8 @@ interface DirEntry {
  * Reads the directory given by path and returns an array of `DirEntry`.
  * @example
  * ```typescript
- * import { readDir, BaseDirectory } from '@tauri-apps/plugin-fs';
- * import { join } from '@tauri-apps/api/path';
+ * import { readDir, BaseDirectory } from '@aphrody/plugin-fs';
+ * import { join } from '@aphrody/api/path';
  * const dir = 'users';
  * const entries = await readDir(dir, { baseDir: BaseDirectory.AppLocalData });
  * await processEntriesRecursively(dir, entries);
@@ -786,7 +786,7 @@ interface ReadFileOptions {
  * TextDecoder can be used to transform the bytes to string if required.
  * @example
  * ```typescript
- * import { readFile, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { readFile, BaseDirectory } from '@aphrody/plugin-fs';
  * const contents = await readFile('avatar.png', { baseDir: BaseDirectory.Resource });
  * ```
  *
@@ -815,7 +815,7 @@ async function readFile(
  * Reads and returns the entire contents of a file as a string using the specified encoding (default: UTF-8).
  * @example
  * ```typescript
- * import { readTextFile, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { readTextFile, BaseDirectory } from '@aphrody/plugin-fs';
  * const contents = await readTextFile('app.conf', { baseDir: BaseDirectory.AppConfig });
  * ```
  *
@@ -837,7 +837,7 @@ async function readTextFile(
  * Returns an async {@linkcode AsyncIterableIterator} over the lines of a file, decoded using the specified encoding (default: UTF-8).
  * @example
  * ```typescript
- * import { readTextFileLines, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { readTextFileLines, BaseDirectory } from '@aphrody/plugin-fs';
  * const lines = await readTextFileLines('app.conf', { baseDir: BaseDirectory.AppConfig });
  * for await (const line of lines) {
  *   console.log(line);
@@ -948,7 +948,7 @@ interface RemoveOptions {
  * If the directory is not empty and the `recursive` option isn't set to true, the promise will be rejected.
  * @example
  * ```typescript
- * import { remove, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { remove, BaseDirectory } from '@aphrody/plugin-fs';
  * await remove('users/file.txt', { baseDir: BaseDirectory.AppLocalData });
  * await remove('users', { baseDir: BaseDirectory.AppLocalData });
  * ```
@@ -992,7 +992,7 @@ interface RenameOptions {
  *
  * @example
  * ```typescript
- * import { rename, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { rename, BaseDirectory } from '@aphrody/plugin-fs';
  * await rename('avatar.png', 'deleted.png', { oldPathBaseDir: BaseDirectory.App, newPathBaseDir: BaseDirectory.AppLocalData });
  * ```
  *
@@ -1036,7 +1036,7 @@ interface StatOptions {
  *
  * @example
  * ```typescript
- * import { stat, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { stat, BaseDirectory } from '@aphrody/plugin-fs';
  * const fileInfo = await stat("hello.txt", { baseDir: BaseDirectory.AppLocalData });
  * console.log(fileInfo.isFile); // true
  * ```
@@ -1065,7 +1065,7 @@ async function stat(
  *
  * @example
  * ```typescript
- * import { lstat, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { lstat, BaseDirectory } from '@aphrody/plugin-fs';
  * const fileInfo = await lstat("hello.txt", { baseDir: BaseDirectory.AppLocalData });
  * console.log(fileInfo.isFile); // true
  * ```
@@ -1103,7 +1103,7 @@ interface TruncateOptions {
  *
  * @example
  * ```typescript
- * import { truncate, readTextFile, writeTextFile, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { truncate, readTextFile, writeTextFile, BaseDirectory } from '@aphrody/plugin-fs';
  * // truncate the entire file
  * await truncate("my_file.txt", 0, { baseDir: BaseDirectory.AppLocalData });
  *
@@ -1158,7 +1158,7 @@ interface WriteFileOptions {
  * Write `data` to the given `path`, by default creating a new file if needed, else overwriting.
  * @example
  * ```typescript
- * import { writeFile, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { writeFile, BaseDirectory } from '@aphrody/plugin-fs';
  *
  * let encoder = new TextEncoder();
  * let data = encoder.encode("Hello World");
@@ -1213,7 +1213,7 @@ async function writeFile(
  *
  * @example
  * ```typescript
- * import { writeTextFile, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { writeTextFile, BaseDirectory } from '@aphrody/plugin-fs';
  *
  * await writeTextFile('file.txt', "Hello world", { baseDir: BaseDirectory.AppLocalData });
  * ```
@@ -1245,7 +1245,7 @@ interface ExistsOptions {
  * Check if a path exists.
  * @example
  * ```typescript
- * import { exists, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { exists, BaseDirectory } from '@aphrody/plugin-fs';
  * // Check if the `$APPDATA/avatar.png` file exists
  * await exists('avatar.png', { baseDir: BaseDirectory.AppData });
  * ```
@@ -1321,7 +1321,7 @@ interface WatchEventAttributes {
  *
  * @example
  * ```typescript
- * import { watch } from '@tauri-apps/plugin-fs';
+ * import { watch } from '@aphrody/plugin-fs';
  * await watch('/path/to/file', (event) => {
  *   if (event.type === 'modify' && event.kind === 'data') {
  *     console.log('data changed', event.paths, event.mode);
@@ -1441,7 +1441,7 @@ async function watchInternal(
  *
  * @example
  * ```typescript
- * import { watch, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { watch, BaseDirectory } from '@aphrody/plugin-fs';
  * const watcher = await watch('app.conf', (event) => console.log(event), { baseDir: BaseDirectory.AppConfig });
  * // when you're done watching:
  * await watcher.close();
@@ -1465,7 +1465,7 @@ async function watch(
  *
  * @example
  * ```typescript
- * import { watchImmediate, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { watchImmediate, BaseDirectory } from '@aphrody/plugin-fs';
  * const watcher = await watchImmediate('app.conf', (event) => console.log(event), { baseDir: BaseDirectory.AppConfig });
  * // when you're done watching:
  * await watcher.close();
@@ -1501,7 +1501,7 @@ interface SizeOptions {
  *
  * @example
  * ```typescript
- * import { size, BaseDirectory } from '@tauri-apps/plugin-fs';
+ * import { size, BaseDirectory } from '@aphrody/plugin-fs';
  * // Get the size of the `$APPDATA/tauri` directory.
  * const dirSize = await size('tauri', { baseDir: BaseDirectory.AppData });
  * console.log(dirSize); // 1024
@@ -1543,7 +1543,7 @@ async function size(
  *
  * @example
  * ```typescript
- * import { startAccessingSecurityScopedResource } from '@tauri-apps/plugin-fs';
+ * import { startAccessingSecurityScopedResource } from '@aphrody/plugin-fs';
  *
  * const filePath = 'file:///path/to/file.txt';
  * await startAccessingSecurityScopedResource(filePath);
@@ -1577,7 +1577,7 @@ async function startAccessingSecurityScopedResource(
  *
  * @example
  * ```typescript
- * import { stopAccessingSecurityScopedResource } from '@tauri-apps/plugin-fs';
+ * import { stopAccessingSecurityScopedResource } from '@aphrody/plugin-fs';
  *
  * const filePath = 'file:///path/to/file.txt';
  * await startAccessingSecurityScopedResource(filePath);

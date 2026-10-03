@@ -26,7 +26,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * Configuration of a proxy that a Client should pass requests to.
@@ -131,7 +131,7 @@ const ERROR_REQUEST_CANCELLED = 'Request cancelled'
  *
  * @example
  * ```typescript
- * import { fetch } from '@tauri-apps/plugin-http';
+ * import { fetch } from '@aphrody/plugin-http';
  * const response = await fetch("http://my.json.host/data.json");
  * console.log(response.status);  // e.g. 200
  * console.log(response.statusText); // e.g. "OK"

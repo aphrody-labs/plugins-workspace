@@ -34,11 +34,11 @@ tauri-plugin-window-state = { git = "https://github.com/tauri-apps/plugins-works
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-window-state
+pnpm add @aphrody/plugin-window-state
 # or
-npm add @tauri-apps/plugin-window-state
+npm add @aphrody/plugin-window-state
 # or
-yarn add @tauri-apps/plugin-window-state
+yarn add @aphrody/plugin-window-state
 ```
 
 ## Usage
@@ -70,7 +70,7 @@ app.save_window_state(StateFlags::all()); // will save the state of all open win
 or through Javascript
 
 ```javascript
-import { saveWindowState, StateFlags } from '@tauri-apps/plugin-window-state'
+import { saveWindowState, StateFlags } from '@aphrody/plugin-window-state'
 
 saveWindowState(StateFlags.ALL)
 ```
@@ -90,7 +90,7 @@ or through Javascript
 import {
   restoreStateCurrent,
   StateFlags
-} from '@tauri-apps/plugin-window-state'
+} from '@aphrody/plugin-window-state'
 
 restoreStateCurrent(StateFlags.ALL)
 ```

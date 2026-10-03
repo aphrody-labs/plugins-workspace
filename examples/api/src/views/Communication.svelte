@@ -1,6 +1,6 @@
 <script>
-  import { getCurrentWebview } from "@tauri-apps/api/webview";
-  import { invoke } from "@tauri-apps/api/core";
+  import { getCurrentWebview } from "@aphrody/api/webview";
+  import { invoke } from "@aphrody/api/core";
   import { onMount, onDestroy } from "svelte";
 
   const webview = getCurrentWebview();

@@ -36,11 +36,11 @@ You can install the JavaScript Guest bindings using your preferred JavaScript pa
 <!-- Add the branch for installations using git! -->
 
 ```sh
-pnpm add @tauri-apps/plugin-nfc
+pnpm add @aphrody/plugin-nfc
 # or
-npm add @tauri-apps/plugin-nfc
+npm add @aphrody/plugin-nfc
 # or
-yarn add @tauri-apps/plugin-nfc
+yarn add @aphrody/plugin-nfc
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { scan, textRecord, write } from '@tauri-apps/plugin-nfc'
+import { scan, textRecord, write } from '@aphrody/plugin-nfc'
 await scan({ type: 'tag', keepSessionAlive: true })
 await write([textRecord('Tauri is awesome!')])
 ```

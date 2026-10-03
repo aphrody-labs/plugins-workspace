@@ -34,11 +34,11 @@ tauri-plugin-fs = { git = "https://github.com/tauri-apps/plugins-workspace", bra
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-fs
+pnpm add @aphrody/plugin-fs
 # or
-npm add @tauri-apps/plugin-fs
+npm add @aphrody/plugin-fs
 # or
-yarn add @tauri-apps/plugin-fs
+yarn add @aphrody/plugin-fs
 ```
 
 ## Usage
@@ -59,7 +59,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { stat } from '@tauri-apps/plugin-fs'
+import { stat } from '@aphrody/plugin-fs'
 
 await stat('/path/to/file')
 ```

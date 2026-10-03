@@ -34,11 +34,11 @@ tauri-plugin-websocket = { git = "https://github.com/tauri-apps/plugins-workspac
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-websocket
+pnpm add @aphrody/plugin-websocket
 # or
-npm add @tauri-apps/plugin-websocket
+npm add @aphrody/plugin-websocket
 # or
-yarn add @tauri-apps/plugin-websocket
+yarn add @aphrody/plugin-websocket
 ```
 
 ## Usage
@@ -59,7 +59,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import WebSocket from '@tauri-apps/plugin-websocket'
+import WebSocket from '@aphrody/plugin-websocket'
 
 const ws = await WebSocket.connect('wss://example.com')
 

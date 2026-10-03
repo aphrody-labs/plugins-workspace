@@ -34,11 +34,11 @@ tauri-plugin-clipboard-manager = { git = "https://github.com/tauri-apps/plugins-
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-clipboard-manager
+pnpm add @aphrody/plugin-clipboard-manager
 # or
-npm add @tauri-apps/plugin-clipboard-manager
+npm add @aphrody/plugin-clipboard-manager
 # or
-yarn add @tauri-apps/plugin-clipboard-manager
+yarn add @aphrody/plugin-clipboard-manager
 ```
 
 ## Usage
@@ -64,7 +64,7 @@ import {
   readText,
   writeHtml,
   clear
-} from '@tauri-apps/plugin-clipboard-manager'
+} from '@aphrody/plugin-clipboard-manager'
 await writeText('Tauri is awesome!')
 assert(await readText(), 'Tauri is awesome!')
 ```

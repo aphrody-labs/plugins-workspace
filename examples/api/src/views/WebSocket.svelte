@@ -1,5 +1,5 @@
 <script>
-  import WebSocket from '@tauri-apps/plugin-websocket'
+  import WebSocket from '@aphrody/plugin-websocket'
   import { onDestroy } from 'svelte'
 
   export let onMessage

@@ -8,15 +8,15 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
-import { type UnlistenFn, listen } from '@tauri-apps/api/event'
+import { invoke } from '@aphrody/api/core'
+import { type UnlistenFn, listen } from '@aphrody/api/event'
 
 /**
  * Get the current URLs that triggered the deep link. Use this on app load to check whether your app was started via a deep link.
  *
  * @example
  * ```typescript
- * import { getCurrent } from '@tauri-apps/plugin-deep-link';
+ * import { getCurrent } from '@aphrody/plugin-deep-link';
  * const urls = await getCurrent();
  * ```
  *
@@ -40,7 +40,7 @@ export async function getCurrent(): Promise<string[] | null> {
  *
  * @example
  * ```typescript
- * import { register } from '@tauri-apps/plugin-deep-link';
+ * import { register } from '@aphrody/plugin-deep-link';
  * await register("my-scheme");
  * ```
  *
@@ -62,7 +62,7 @@ export async function register(protocol: string): Promise<null> {
  *
  * @example
  * ```typescript
- * import { unregister } from '@tauri-apps/plugin-deep-link';
+ * import { unregister } from '@aphrody/plugin-deep-link';
  * await unregister("my-scheme");
  * ```
  *
@@ -86,7 +86,7 @@ export async function unregister(protocol: string): Promise<null> {
  *
  * @example
  * ```typescript
- * import { isRegistered } from '@tauri-apps/plugin-deep-link';
+ * import { isRegistered } from '@aphrody/plugin-deep-link';
  * await isRegistered("my-scheme");
  * ```
  *
@@ -108,7 +108,7 @@ export async function isRegistered(protocol: string): Promise<boolean> {
  *
  * @example
  * ```typescript
- * import { onOpenUrl } from '@tauri-apps/plugin-deep-link';
+ * import { onOpenUrl } from '@aphrody/plugin-deep-link';
  * await onOpenUrl((urls) => { console.log(urls) });
  * ```
  *

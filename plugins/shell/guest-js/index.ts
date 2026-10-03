@@ -6,7 +6,7 @@
  * Access the system shell.
  * Allows you to spawn child processes.
  *
- * To open files and URLs with their default application, use `@tauri-apps/plugin-opener`.
+ * To open files and URLs with their default application, use `@aphrody/plugin-opener`.
  *
  * ## Security
  *
@@ -50,7 +50,7 @@
  * ```
  * Usage:
  * ```typescript
- * import { Command } from '@tauri-apps/plugin-shell'
+ * import { Command } from '@aphrody/plugin-shell'
  * Command.create('run-git-commit', ['commit', '-m', 'the commit message'])
  * ```
  *
@@ -59,7 +59,7 @@
  * @module
  */
 
-import { invoke, Channel } from '@tauri-apps/api/core'
+import { invoke, Channel } from '@aphrody/api/core'
 
 /**
  * Options that configure how a child process is spawned.
@@ -118,7 +118,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * command.addListener('error', (error) => console.error(error));
    * ```
@@ -142,7 +142,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * const listener = (error: string) => console.error(error);
    * command.addListener('error', listener);
@@ -173,7 +173,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * command.on('close', (data) => {
    *   console.log(`command finished with code ${data.code}`);
@@ -209,7 +209,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * command.once('close', (data) => {
    *   console.log(`command finished with code ${data.code}`);
@@ -240,7 +240,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * const listener = (error: string) => console.error(error);
    * command.on('error', listener);
@@ -274,7 +274,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * command.on('error', (error) => console.error(error));
    * command.removeAllListeners('error');
@@ -307,7 +307,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { EventEmitter } from '@tauri-apps/plugin-shell';
+   * import { EventEmitter } from '@aphrody/plugin-shell';
    * const emitter = new EventEmitter<{ data: string }>();
    * emitter.on('data', (line) => console.log(line));
    * emitter.emit('data', 'hello');
@@ -335,7 +335,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * command.on('close', () => {});
    * console.log(command.listenerCount('close')); // 1
@@ -364,7 +364,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * command.prependListener('error', (error) => console.error(error));
    * ```
@@ -398,7 +398,7 @@ class EventEmitter<E extends Record<string, any>> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * command.prependOnceListener('error', (error) => console.error(error));
    * ```
@@ -439,7 +439,7 @@ class Child {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * // a `Child` is usually obtained by spawning a command:
    * const child = await Command.create('node').spawn();
    * console.log(child.pid);
@@ -459,7 +459,7 @@ class Child {
    * @param data The message to write, either a string or a byte array.
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * const child = await command.spawn();
    * await child.write('message');
@@ -482,7 +482,7 @@ class Child {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * const child = await command.spawn();
    * await child.kill();
@@ -527,7 +527,7 @@ interface OutputEvents<O extends IOPayload> {
  * It emits the `close` and `error` events.
  * @example
  * ```typescript
- * import { Command } from '@tauri-apps/plugin-shell';
+ * import { Command } from '@aphrody/plugin-shell';
  * const command = Command.create('node');
  * command.on('close', data => {
  *   console.log(`command finished with code ${data.code} and signal ${data.signal}`)
@@ -580,7 +580,7 @@ class Command<O extends IOPayload> extends EventEmitter<CommandEvents> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('my-app', ['run', 'tauri']);
    * const output = await command.execute();
    * ```
@@ -599,7 +599,7 @@ class Command<O extends IOPayload> extends EventEmitter<CommandEvents> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('my-app', ['run', 'tauri'], { encoding: 'raw' });
    * const output = await command.execute();
    * console.log(output.stdout); // a Uint8Array
@@ -625,7 +625,7 @@ class Command<O extends IOPayload> extends EventEmitter<CommandEvents> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('my-app', ['run', 'tauri'], { cwd: '/path/to/project' });
    * const output = await command.execute();
    * ```
@@ -672,7 +672,7 @@ class Command<O extends IOPayload> extends EventEmitter<CommandEvents> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.sidecar('my-sidecar');
    * const output = await command.execute();
    * ```
@@ -692,7 +692,7 @@ class Command<O extends IOPayload> extends EventEmitter<CommandEvents> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.sidecar('my-sidecar', [], { encoding: 'raw' });
    * const output = await command.execute();
    * console.log(output.stdout); // a Uint8Array
@@ -719,7 +719,7 @@ class Command<O extends IOPayload> extends EventEmitter<CommandEvents> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.sidecar('my-sidecar', [], { cwd: '/path/to/project' });
    * const output = await command.execute();
    * ```
@@ -770,7 +770,7 @@ class Command<O extends IOPayload> extends EventEmitter<CommandEvents> {
    *
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const command = Command.create('node');
    * command.stdout.on('data', (line) => console.log(line));
    * const child = await command.spawn();
@@ -820,7 +820,7 @@ class Command<O extends IOPayload> extends EventEmitter<CommandEvents> {
    * Executes the command as a child process, waiting for it to finish and collecting all of its output.
    * @example
    * ```typescript
-   * import { Command } from '@tauri-apps/plugin-shell';
+   * import { Command } from '@aphrody/plugin-shell';
    * const output = await Command.create('echo', 'message').execute();
    * assert(output.code === 0);
    * assert(output.signal === null);

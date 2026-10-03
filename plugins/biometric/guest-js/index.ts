@@ -8,7 +8,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * The kind of biometry hardware detected on the device.
@@ -78,7 +78,7 @@ export interface AuthOptions {
  * Checks if the biometric authentication is available.
  * @example
  * ```typescript
- * import { checkStatus } from '@tauri-apps/plugin-biometric';
+ * import { checkStatus } from '@aphrody/plugin-biometric';
  *
  * const status = await checkStatus();
  * if (status.isAvailable) {
@@ -98,7 +98,7 @@ export async function checkStatus(): Promise<Status> {
  *
  * @example
  * ```typescript
- * import { authenticate } from "@tauri-apps/plugin-biometric";
+ * import { authenticate } from "@aphrody/plugin-biometric";
  * await authenticate('Open your wallet');
  * ```
  * @param reason A message shown to the user explaining why authentication is requested.

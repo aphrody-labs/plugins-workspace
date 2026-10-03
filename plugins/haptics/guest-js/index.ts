@@ -23,7 +23,7 @@ import type {
  *
  * @example
  * ```typescript
- * import { vibrate } from '@tauri-apps/plugin-haptics'
+ * import { vibrate } from '@aphrody/plugin-haptics'
  * await vibrate(300)
  * ```
  *
@@ -44,7 +44,7 @@ export async function vibrate(duration: number): Promise<Result<null, Error>> {
  *
  * @example
  * ```typescript
- * import { impactFeedback } from '@tauri-apps/plugin-haptics'
+ * import { impactFeedback } from '@aphrody/plugin-haptics'
  * await impactFeedback('medium')
  * ```
  *
@@ -67,7 +67,7 @@ export async function impactFeedback(
  *
  * @example
  * ```typescript
- * import { notificationFeedback } from '@tauri-apps/plugin-haptics'
+ * import { notificationFeedback } from '@aphrody/plugin-haptics'
  * await notificationFeedback('success')
  * ```
  *
@@ -88,7 +88,7 @@ export async function notificationFeedback(
  *
  * @example
  * ```typescript
- * import { selectionFeedback } from '@tauri-apps/plugin-haptics'
+ * import { selectionFeedback } from '@aphrody/plugin-haptics'
  * await selectionFeedback()
  * ```
  *

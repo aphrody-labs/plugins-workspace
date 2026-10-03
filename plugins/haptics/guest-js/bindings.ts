@@ -98,9 +98,9 @@ export type NotificationFeedbackType = 'success' | 'warning' | 'error'
 
 /** tauri-specta globals **/
 
-import { invoke as TAURI_INVOKE } from '@tauri-apps/api/core'
-import * as TAURI_API_EVENT from '@tauri-apps/api/event'
-import { type WebviewWindow as __WebviewWindow__ } from '@tauri-apps/api/webviewWindow'
+import { invoke as TAURI_INVOKE } from '@aphrody/api/core'
+import * as TAURI_API_EVENT from '@aphrody/api/event'
+import { type WebviewWindow as __WebviewWindow__ } from '@aphrody/api/webviewWindow'
 
 type __EventObj__<T> = {
   listen: (

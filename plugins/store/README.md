@@ -34,11 +34,11 @@ tauri-plugin-store = { git = "https://github.com/tauri-apps/plugins-workspace", 
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-store
+pnpm add @aphrody/plugin-store
 # or
-npm add @tauri-apps/plugin-store
+npm add @aphrody/plugin-store
 # or
-yarn add @tauri-apps/plugin-store
+yarn add @aphrody/plugin-store
 ```
 
 ## Usage
@@ -59,7 +59,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```typescript
-import { Store } from '@tauri-apps/plugin-store'
+import { Store } from '@aphrody/plugin-store'
 
 const store = await Store.load('settings.json')
 
@@ -96,7 +96,7 @@ await store.load()
 There's also a high level API `LazyStore` which only loads the store on first access, note that the options will be ignored if a `Store` with that path has already been created
 
 ```typescript
-import { LazyStore } from '@tauri-apps/plugin-store'
+import { LazyStore } from '@aphrody/plugin-store'
 
 const store = new LazyStore('settings.json')
 ```

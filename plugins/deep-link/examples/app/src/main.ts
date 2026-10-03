@@ -5,7 +5,7 @@
 import {
   onOpenUrl,
   getCurrent as getCurrentDeepLinkUrls
-} from '@tauri-apps/plugin-deep-link'
+} from '@aphrody/plugin-deep-link'
 
 function handler(urls: string[]) {
   console.log(urls)

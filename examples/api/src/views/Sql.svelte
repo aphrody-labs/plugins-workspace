@@ -1,5 +1,5 @@
 <script>
-  import Database from '@tauri-apps/plugin-sql'
+  import Database from '@aphrody/plugin-sql'
   import { onMount } from 'svelte'
 
   export let onMessage

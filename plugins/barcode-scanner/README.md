@@ -34,11 +34,11 @@ tauri-plugin-barcode-scanner = { git = "https://github.com/tauri-apps/plugins-wo
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-barcode-scanner
+pnpm add @aphrody/plugin-barcode-scanner
 # or
-npm add @tauri-apps/plugin-barcode-scanner
+npm add @aphrody/plugin-barcode-scanner
 # or
-yarn add @tauri-apps/plugin-barcode-scanner
+yarn add @aphrody/plugin-barcode-scanner
 ```
 
 ## Usage
@@ -59,7 +59,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { scan } from '@tauri-apps/plugin-barcode-scanner'
+import { scan } from '@aphrody/plugin-barcode-scanner'
 
 // `windowed: true` actually sets the webview to transparent
 // instead of opening a separate view for the camera

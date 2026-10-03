@@ -1,5 +1,5 @@
 <script>
-  import { enable, disable, isEnabled } from '@tauri-apps/plugin-autostart'
+  import { enable, disable, isEnabled } from '@aphrody/plugin-autostart'
   import { onMount } from 'svelte'
 
   export let onMessage

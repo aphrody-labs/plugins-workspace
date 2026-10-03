@@ -34,11 +34,11 @@ tauri-plugin-PLUGIN_NAME = { git = "https://github.com/tauri-apps/plugins-worksp
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-PLUGIN_NAME
+pnpm add @aphrody/plugin-PLUGIN_NAME
 # or
-npm add @tauri-apps/plugin-PLUGIN_NAME
+npm add @aphrody/plugin-PLUGIN_NAME
 # or
-yarn add @tauri-apps/plugin-PLUGIN_NAME
+yarn add @aphrody/plugin-PLUGIN_NAME
 ```
 
 ## Usage

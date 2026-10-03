@@ -43,11 +43,11 @@ You can install the JavaScript Guest bindings using your preferred JavaScript pa
 > Note: If your JavaScript package manager cannot install packages from git monorepos, you can still use the code by manually copying the [Guest bindings](./guest-js/index.ts) into your source files.
 
 ```sh
-pnpm add @tauri-apps/plugin-stronghold
+pnpm add @aphrody/plugin-stronghold
 # or
-npm add @tauri-apps/plugin-stronghold
+npm add @aphrody/plugin-stronghold
 # or
-yarn add @tauri-apps/plugin-stronghold
+yarn add @aphrody/plugin-stronghold
 ```
 
 ## Usage
@@ -90,7 +90,7 @@ Afterwards all the plugin's APIs are available through the JavaScript guest bind
 
 ```javascript
 import { Stronghold, Location, Client } from "tauri-plugin-stronghold-api";
-import { appDataDir } from "@tauri-apps/api/path";
+import { appDataDir } from "@aphrody/api/path";
 
 const initStronghold = async () => {
   const vaultPath = `${await appDataDir()}/vault.hold`;

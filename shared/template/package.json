@@ -1,5 +1,5 @@
 {
-  "name": "@tauri-apps/plugin-PLUGIN_NAME",
+  "name": "@aphrody/plugin-PLUGIN_NAME",
   "version": "1.0.0",
   "license": "MIT OR Apache-2.0",
   "authors": [
@@ -24,6 +24,6 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@tauri-apps/api": "^2.10.1"
+    "@aphrody/api": "^2.10.1"
   }
 }

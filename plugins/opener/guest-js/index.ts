@@ -18,14 +18,14 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * Opens a url with the system's default app, or the one specified with {@linkcode openWith}.
  *
  * @example
  * ```typescript
- * import { openUrl } from '@tauri-apps/plugin-opener';
+ * import { openUrl } from '@aphrody/plugin-opener';
  *
  * // opens the given URL on the default browser:
  * await openUrl('https://github.com/tauri-apps/tauri');
@@ -55,7 +55,7 @@ export async function openUrl(
  *
  * @example
  * ```typescript
- * import { openPath } from '@tauri-apps/plugin-opener';
+ * import { openPath } from '@aphrody/plugin-opener';
  *
  * // opens a file using the default program:
  * await openPath('/path/to/file');
@@ -84,7 +84,7 @@ export async function openPath(path: string, openWith?: string): Promise<void> {
  *
  * @example
  * ```typescript
- * import { revealItemsInDir } from '@tauri-apps/plugin-opener';
+ * import { revealItemsInDir } from '@aphrody/plugin-opener';
  * await revealItemsInDir('/path/to/file');
  * await revealItemsInDir([ '/path/to/file', '/path/to/another/file' ]);
  * ```

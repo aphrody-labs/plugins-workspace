@@ -5,7 +5,7 @@
     requestPermissions,
     Format,
     cancel
-  } from '@tauri-apps/plugin-barcode-scanner'
+  } from '@aphrody/plugin-barcode-scanner'
 
   export let onMessage
 

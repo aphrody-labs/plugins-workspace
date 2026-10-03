@@ -13,7 +13,7 @@ import {
   invoke,
   PermissionState,
   checkPermissions as checkPluginPermissions
-} from '@tauri-apps/api/core'
+} from '@aphrody/api/core'
 
 /**
  * The GPS coordinates of a {@link Position}, along with the accuracy of each reading.
@@ -125,7 +125,7 @@ export type PositionOptions = {
  *
  * @example
  * ```typescript
- * import { watchPosition } from '@tauri-apps/plugin-geolocation';
+ * import { watchPosition } from '@aphrody/plugin-geolocation';
  * const watchId = await watchPosition(
  *   { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 },
  *   (position, error) => {
@@ -167,7 +167,7 @@ export async function watchPosition(
  *
  * @example
  * ```typescript
- * import { getCurrentPosition } from '@tauri-apps/plugin-geolocation';
+ * import { getCurrentPosition } from '@aphrody/plugin-geolocation';
  * const position = await getCurrentPosition();
  * ```
  *
@@ -188,7 +188,7 @@ export async function getCurrentPosition(
  *
  * @example
  * ```typescript
- * import { clearWatch } from '@tauri-apps/plugin-geolocation';
+ * import { clearWatch } from '@aphrody/plugin-geolocation';
  * await clearWatch(watchId);
  * ```
  *
@@ -206,7 +206,7 @@ export async function clearWatch(channelId: number): Promise<void> {
  *
  * @example
  * ```typescript
- * import { checkPermissions } from '@tauri-apps/plugin-geolocation';
+ * import { checkPermissions } from '@aphrody/plugin-geolocation';
  * const permission = await checkPermissions();
  * ```
  *
@@ -222,7 +222,7 @@ export async function checkPermissions(): Promise<PermissionStatus> {
  *
  * @example
  * ```typescript
- * import { requestPermissions } from '@tauri-apps/plugin-geolocation';
+ * import { requestPermissions } from '@aphrody/plugin-geolocation';
  * const permission = await requestPermissions(['location']);
  * ```
  *

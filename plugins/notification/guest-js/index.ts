@@ -13,9 +13,9 @@ import {
   invoke,
   type PluginListener,
   addPluginListener
-} from '@tauri-apps/api/core'
+} from '@aphrody/api/core'
 
-export type { PermissionState } from '@tauri-apps/api/core'
+export type { PermissionState } from '@aphrody/api/core'
 
 /**
  * Options to send a notification.
@@ -275,7 +275,7 @@ class Schedule {
    *
    * @example
    * ```typescript
-   * import { Schedule, sendNotification } from '@tauri-apps/plugin-notification';
+   * import { Schedule, sendNotification } from '@aphrody/plugin-notification';
    * const schedule = Schedule.at(new Date(Date.now() + 60 * 1000));
    * sendNotification({ title: 'Tauri', body: 'One minute later', schedule });
    * ```
@@ -300,7 +300,7 @@ class Schedule {
    *
    * @example
    * ```typescript
-   * import { Schedule, sendNotification } from '@tauri-apps/plugin-notification';
+   * import { Schedule, sendNotification } from '@aphrody/plugin-notification';
    * // fires every day at 9:00
    * const schedule = Schedule.interval({ hour: 9, minute: 0 });
    * sendNotification({ title: 'Tauri', body: 'Good morning', schedule });
@@ -327,7 +327,7 @@ class Schedule {
    *
    * @example
    * ```typescript
-   * import { Schedule, ScheduleEvery, sendNotification } from '@tauri-apps/plugin-notification';
+   * import { Schedule, ScheduleEvery, sendNotification } from '@aphrody/plugin-notification';
    * const schedule = Schedule.every(ScheduleEvery.Hour, 2);
    * sendNotification({ title: 'Tauri', body: 'Every two hours', schedule });
    * ```
@@ -624,7 +624,7 @@ interface Channel {
  * Checks if the permission to send notifications is granted.
  * @example
  * ```typescript
- * import { isPermissionGranted } from '@tauri-apps/plugin-notification';
+ * import { isPermissionGranted } from '@aphrody/plugin-notification';
  * const permissionGranted = await isPermissionGranted();
  * ```
  *
@@ -643,7 +643,7 @@ async function isPermissionGranted(): Promise<boolean> {
  * Requests the permission to send notifications.
  * @example
  * ```typescript
- * import { isPermissionGranted, requestPermission } from '@tauri-apps/plugin-notification';
+ * import { isPermissionGranted, requestPermission } from '@aphrody/plugin-notification';
  * let permissionGranted = await isPermissionGranted();
  * if (!permissionGranted) {
  *   const permission = await requestPermission();
@@ -663,7 +663,7 @@ async function requestPermission(): Promise<NotificationPermission> {
  * Sends a notification to the user.
  * @example
  * ```typescript
- * import { isPermissionGranted, requestPermission, sendNotification } from '@tauri-apps/plugin-notification';
+ * import { isPermissionGranted, requestPermission, sendNotification } from '@aphrody/plugin-notification';
  * let permissionGranted = await isPermissionGranted();
  * if (!permissionGranted) {
  *   const permission = await requestPermission();
@@ -692,7 +692,7 @@ function sendNotification(options: Options | string): void {
  *
  * @example
  * ```typescript
- * import { registerActionTypes } from '@tauri-apps/plugin-notification';
+ * import { registerActionTypes } from '@aphrody/plugin-notification';
  * await registerActionTypes([{
  *   id: 'tauri',
  *   actions: [{
@@ -717,7 +717,7 @@ async function registerActionTypes(types: ActionType[]): Promise<void> {
  *
  * @example
  * ```typescript
- * import { pending } from '@tauri-apps/plugin-notification';
+ * import { pending } from '@aphrody/plugin-notification';
  * const pendingNotifications = await pending();
  * ```
  *
@@ -734,7 +734,7 @@ async function pending(): Promise<PendingNotification[]> {
  *
  * @example
  * ```typescript
- * import { cancel } from '@tauri-apps/plugin-notification';
+ * import { cancel } from '@aphrody/plugin-notification';
  * await cancel([-34234, 23432, 4311]);
  * ```
  *
@@ -753,7 +753,7 @@ async function cancel(notifications: number[]): Promise<void> {
  *
  * @example
  * ```typescript
- * import { cancelAll } from '@tauri-apps/plugin-notification';
+ * import { cancelAll } from '@aphrody/plugin-notification';
  * await cancelAll();
  * ```
  *
@@ -770,7 +770,7 @@ async function cancelAll(): Promise<void> {
  *
  * @example
  * ```typescript
- * import { active } from '@tauri-apps/plugin-notification';
+ * import { active } from '@aphrody/plugin-notification';
  * const activeNotifications = await active();
  * ```
  *
@@ -787,7 +787,7 @@ async function active(): Promise<ActiveNotification[]> {
  *
  * @example
  * ```typescript
- * import { removeActive } from '@tauri-apps/plugin-notification';
+ * import { removeActive } from '@aphrody/plugin-notification';
  * await removeActive([{ id: -34234 }, { id: 23432 }, { id: 4311 }])
  * ```
  *
@@ -808,7 +808,7 @@ async function removeActive(
  *
  * @example
  * ```typescript
- * import { removeAllActive } from '@tauri-apps/plugin-notification';
+ * import { removeAllActive } from '@aphrody/plugin-notification';
  * await removeAllActive()
  * ```
  *
@@ -825,7 +825,7 @@ async function removeAllActive(): Promise<void> {
  *
  * @example
  * ```typescript
- * import { createChannel, Importance, Visibility } from '@tauri-apps/plugin-notification';
+ * import { createChannel, Importance, Visibility } from '@aphrody/plugin-notification';
  * await createChannel({
  *   id: 'new-messages',
  *   name: 'New Messages',
@@ -851,7 +851,7 @@ async function createChannel(channel: Channel): Promise<void> {
  *
  * @example
  * ```typescript
- * import { removeChannel } from '@tauri-apps/plugin-notification';
+ * import { removeChannel } from '@aphrody/plugin-notification';
  * await removeChannel('new-messages');
  * ```
  *
@@ -870,7 +870,7 @@ async function removeChannel(id: string): Promise<void> {
  *
  * @example
  * ```typescript
- * import { channels } from '@tauri-apps/plugin-notification';
+ * import { channels } from '@aphrody/plugin-notification';
  * const notificationChannels = await channels();
  * ```
  *
@@ -889,7 +889,7 @@ async function channels(): Promise<Channel[]> {
  *
  * @example
  * ```typescript
- * import { onNotificationReceived } from '@tauri-apps/plugin-notification';
+ * import { onNotificationReceived } from '@aphrody/plugin-notification';
  * const unlisten = await onNotificationReceived((notification) => {
  *   console.log(`received notification: ${notification.title}`);
  * });
@@ -915,7 +915,7 @@ async function onNotificationReceived(
  *
  * @example
  * ```typescript
- * import { onAction } from '@tauri-apps/plugin-notification';
+ * import { onAction } from '@aphrody/plugin-notification';
  * const unlisten = await onAction((notification) => {
  *   console.log(`user acted on notification: ${notification.title}`);
  * });

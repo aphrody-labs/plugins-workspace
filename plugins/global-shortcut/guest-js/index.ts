@@ -8,7 +8,7 @@
  * @module
  */
 
-import { invoke, Channel } from '@tauri-apps/api/core'
+import { invoke, Channel } from '@aphrody/api/core'
 
 /**
  * Payload sent to a shortcut handler when a registered shortcut is pressed or released.
@@ -35,7 +35,7 @@ export type ShortcutHandler = (event: ShortcutEvent) => void
  *
  * @example
  * ```typescript
- * import { register } from '@tauri-apps/plugin-global-shortcut';
+ * import { register } from '@aphrody/plugin-global-shortcut';
  *
  * // register a single hotkey
  * await register('CommandOrControl+Shift+C', (event) => {
@@ -73,7 +73,7 @@ async function register(
  *
  * @example
  * ```typescript
- * import { unregister } from '@tauri-apps/plugin-global-shortcut';
+ * import { unregister } from '@aphrody/plugin-global-shortcut';
  *
  * // unregister a single hotkey
  * await unregister('CmdOrControl+Space');
@@ -97,7 +97,7 @@ async function unregister(shortcuts: string | string[]): Promise<void> {
  *
  * @example
  * ```typescript
- * import { unregisterAll } from '@tauri-apps/plugin-global-shortcut';
+ * import { unregisterAll } from '@aphrody/plugin-global-shortcut';
  * await unregisterAll();
  * ```
  * @since 2.0.0
@@ -113,7 +113,7 @@ async function unregisterAll(): Promise<void> {
  *
  * @example
  * ```typescript
- * import { isRegistered } from '@tauri-apps/plugin-global-shortcut';
+ * import { isRegistered } from '@aphrody/plugin-global-shortcut';
  * const isRegistered = await isRegistered('CommandOrControl+P');
  * ```
  *

@@ -8,7 +8,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /** @ignore */
 declare global {
@@ -68,7 +68,7 @@ type Arch =
  *
  * @example
  * ```typescript
- * import { eol } from '@tauri-apps/plugin-os';
+ * import { eol } from '@aphrody/plugin-os';
  * const eolChar = eol();
  * ```
  *
@@ -85,7 +85,7 @@ function eol(): string {
  *
  * @example
  * ```typescript
- * import { platform } from '@tauri-apps/plugin-os';
+ * import { platform } from '@aphrody/plugin-os';
  * const platformName = platform();
  * ```
  *
@@ -101,7 +101,7 @@ function platform(): Platform {
  * Returns the current operating system version.
  * @example
  * ```typescript
- * import { version } from '@tauri-apps/plugin-os';
+ * import { version } from '@aphrody/plugin-os';
  * const osVersion = version();
  * ```
  *
@@ -121,7 +121,7 @@ type Family = 'unix' | 'windows'
  * Returns the current operating system family. Possible values are `'unix'`, `'windows'`.
  * @example
  * ```typescript
- * import { family } from '@tauri-apps/plugin-os';
+ * import { family } from '@aphrody/plugin-os';
  * const family = family();
  * ```
  *
@@ -136,7 +136,7 @@ function family(): Family {
  * Returns the current operating system type. Returns `'linux'` on Linux, `'macos'` on macOS, `'windows'` on Windows, `'ios'` on iOS and `'android'` on Android.
  * @example
  * ```typescript
- * import { type } from '@tauri-apps/plugin-os';
+ * import { type } from '@aphrody/plugin-os';
  * const osType = type();
  * ```
  *
@@ -152,7 +152,7 @@ function type(): OsType {
  * Possible values are `'x86'`, `'x86_64'`, `'arm'`, `'aarch64'`, `'mips'`, `'mips64'`, `'powerpc'`, `'powerpc64'`, `'riscv64'`, `'s390x'`, `'sparc64'`.
  * @example
  * ```typescript
- * import { arch } from '@tauri-apps/plugin-os';
+ * import { arch } from '@aphrody/plugin-os';
  * const archName = arch();
  * ```
  *
@@ -167,7 +167,7 @@ function arch(): Arch {
  * Returns the file extension, if any, used for executable binaries on this platform. Possible values are `'exe'` and `''` (empty string).
  * @example
  * ```typescript
- * import { exeExtension } from '@tauri-apps/plugin-os';
+ * import { exeExtension } from '@aphrody/plugin-os';
  * const exeExt = exeExtension();
  * ```
  *
@@ -182,7 +182,7 @@ function exeExtension(): string {
  * Returns a String with a `BCP-47` language tag inside. If the locale couldn’t be obtained, `null` is returned instead.
  * @example
  * ```typescript
- * import { locale } from '@tauri-apps/plugin-os';
+ * import { locale } from '@aphrody/plugin-os';
  * const locale = await locale();
  * if (locale) {
  *    // use the locale string here
@@ -200,7 +200,7 @@ async function locale(): Promise<string | null> {
  * Returns the host name of the operating system.
  * @example
  * ```typescript
- * import { hostname } from '@tauri-apps/plugin-os';
+ * import { hostname } from '@aphrody/plugin-os';
  * const hostname = await hostname();
  * ```
  *

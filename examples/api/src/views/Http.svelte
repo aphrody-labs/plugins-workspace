@@ -1,5 +1,5 @@
 <script>
-  import { fetch as tauriFetch } from '@tauri-apps/plugin-http'
+  import { fetch as tauriFetch } from '@aphrody/plugin-http'
   import { JsonView } from '@zerodevx/svelte-json-view'
 
   let httpMethod = 'GET'

@@ -11,9 +11,9 @@
  * @module
  */
 
-import { listen, type UnlistenFn } from '@tauri-apps/api/event'
+import { listen, type UnlistenFn } from '@aphrody/api/event'
 
-import { invoke, Resource } from '@tauri-apps/api/core'
+import { invoke, Resource } from '@aphrody/api/core'
 
 interface ChangePayload<T> {
   path: string
@@ -61,7 +61,7 @@ export type StoreOptions = {
  *
  * @example
  * ```typescript
- * import { load } from '@tauri-apps/plugin-store';
+ * import { load } from '@aphrody/plugin-store';
  * const store = await load('store.json');
  * ```
  *
@@ -88,7 +88,7 @@ export async function load(
  *
  * @example
  * ```typescript
- * import { getStore } from '@tauri-apps/plugin-store';
+ * import { getStore } from '@aphrody/plugin-store';
  * const store = await getStore('store.json');
  * ```
  *
@@ -129,7 +129,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * ```
    */
@@ -143,7 +143,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * await store.init();
    * ```
@@ -159,7 +159,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * await store.set('some-key', { value: 5 });
    * ```
@@ -178,7 +178,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const value = await store.get<{ value: number }>('some-key');
    * ```
@@ -197,7 +197,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const exists = await store.has('some-key');
    * ```
@@ -216,7 +216,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const removed = await store.delete('some-key');
    * ```
@@ -236,7 +236,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * await store.clear();
    * ```
@@ -253,7 +253,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json', { defaults: { 'some-key': 0 } });
    * await store.reset();
    * ```
@@ -269,7 +269,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const keys = await store.keys();
    * ```
@@ -287,7 +287,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const values = await store.values();
    * ```
@@ -305,7 +305,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const entries = await store.entries();
    * ```
@@ -323,7 +323,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const length = await store.length();
    * ```
@@ -341,7 +341,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * await store.reload({ ignoreDefaults: true });
    * ```
@@ -359,7 +359,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * await store.save();
    * ```
@@ -375,7 +375,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const unlisten = await store.onKeyChange<{ value: number }>('some-key', (value) => {
    *   console.log(value);
@@ -400,7 +400,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * const unlisten = await store.onChange<{ value: number }>((key, value) => {
    *   console.log(key, value);
@@ -425,7 +425,7 @@ export class LazyStore implements IStore {
    *
    * @example
    * ```typescript
-   * import { LazyStore } from '@tauri-apps/plugin-store';
+   * import { LazyStore } from '@aphrody/plugin-store';
    * const store = new LazyStore('store.json');
    * await store.close();
    * ```
@@ -459,7 +459,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * ```
    *
@@ -485,7 +485,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * let store = await Store.get('store.json');
    * if (!store) {
    *   store = await Store.load('store.json');
@@ -509,7 +509,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * await store.set('some-key', { value: 5 });
    * ```
@@ -530,7 +530,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const value = await store.get<{ value: number }>('some-key');
    * ```
@@ -551,7 +551,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const exists = await store.has('some-key');
    * ```
@@ -574,7 +574,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const removed = await store.delete('some-key');
    * ```
@@ -597,7 +597,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * await store.clear();
    * ```
@@ -614,7 +614,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json', { defaults: { 'some-key': 0 } });
    * await store.reset();
    * ```
@@ -628,7 +628,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const keys = await store.keys();
    * ```
@@ -644,7 +644,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const values = await store.values();
    * ```
@@ -660,7 +660,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const entries = await store.entries();
    * ```
@@ -676,7 +676,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const length = await store.length();
    * ```
@@ -700,7 +700,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * await store.reload({ ignoreDefaults: true });
    * ```
@@ -718,7 +718,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json', { autoSave: false });
    * await store.set('some-key', { value: 5 });
    * await store.save();
@@ -735,7 +735,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const unlisten = await store.onKeyChange<{ value: number }>('some-key', (value) => {
    *   console.log(value);
@@ -766,7 +766,7 @@ export class Store extends Resource implements IStore {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-store';
+   * import { Store } from '@aphrody/plugin-store';
    * const store = await Store.load('store.json');
    * const unlisten = await store.onChange<{ value: number }>((key, value) => {
    *   console.log(key, value);

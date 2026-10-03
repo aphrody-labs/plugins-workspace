@@ -36,11 +36,11 @@ branch = "v2"
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-sql
+pnpm add @aphrody/plugin-sql
 # or
-npm add @tauri-apps/plugin-sql
+npm add @aphrody/plugin-sql
 # or
-yarn add @tauri-apps/plugin-sql
+yarn add @aphrody/plugin-sql
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import Database from '@tauri-apps/plugin-sql'
+import Database from '@aphrody/plugin-sql'
 
 // sqlite. The path is relative to `tauri::api::path::BaseDirectory::AppConfig`.
 const db = await Database.load('sqlite:test.db')
@@ -172,7 +172,7 @@ To apply the migrations when the plugin is initialized, add the connection strin
 Alternatively, the client side `load()` also runs the migrations for a given connection string:
 
 ```ts
-import Database from '@tauri-apps/plugin-sql'
+import Database from '@aphrody/plugin-sql'
 const db = await Database.load('sqlite:mydatabase.db')
 ```
 

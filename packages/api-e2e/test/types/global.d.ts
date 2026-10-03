@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 // The examples/api app is built with `withGlobalTauri: true`, so the whole
-// `@tauri-apps/api` surface, plus every plugin's API (registered by its
+// `@aphrody/api` surface, plus every plugin's API (registered by its
 // `api-iife.js`), is available on `window.__TAURI__` inside the webview.
 // This mirrors that for the functions we serialize and run in the page.
 

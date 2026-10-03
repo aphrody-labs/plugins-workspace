@@ -3,7 +3,7 @@
     checkPermissions,
     requestPermissions,
     getCurrentPosition
-  } from '@tauri-apps/plugin-geolocation'
+  } from '@aphrody/plugin-geolocation'
 
   export let onMessage
 

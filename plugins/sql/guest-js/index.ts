@@ -10,7 +10,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * The outcome of a statement run through {@link Database.execute}.
@@ -54,7 +54,7 @@ export default class Database {
    *
    * @example
    * ```typescript
-   * import Database from '@tauri-apps/plugin-sql'
+   * import Database from '@aphrody/plugin-sql'
    * const db = new Database('sqlite:test.db')
    * ```
    */
@@ -74,7 +74,7 @@ export default class Database {
    *
    * @example
    * ```typescript
-   * import Database from '@tauri-apps/plugin-sql'
+   * import Database from '@aphrody/plugin-sql'
    * const db = await Database.load('sqlite:test.db')
    * ```
    *
@@ -102,7 +102,7 @@ export default class Database {
    *
    * @example
    * ```typescript
-   * import Database from '@tauri-apps/plugin-sql'
+   * import Database from '@aphrody/plugin-sql'
    * const db = Database.get('sqlite:test.db')
    * ```
    *
@@ -120,7 +120,7 @@ export default class Database {
    *
    * @example
    * ```typescript
-   * import Database from '@tauri-apps/plugin-sql'
+   * import Database from '@aphrody/plugin-sql'
    * const db = await Database.load('sqlite:test.db')
    *
    * // for sqlite & postgres
@@ -174,7 +174,7 @@ export default class Database {
    *
    * @example
    * ```typescript
-   * import Database from '@tauri-apps/plugin-sql'
+   * import Database from '@aphrody/plugin-sql'
    * const db = await Database.load('sqlite:test.db')
    *
    * // for sqlite & postgres
@@ -209,7 +209,7 @@ export default class Database {
    *
    * @example
    * ```typescript
-   * import Database from '@tauri-apps/plugin-sql'
+   * import Database from '@aphrody/plugin-sql'
    * const db = await Database.load('sqlite:test.db')
    * const success = await db.close()
    * ```

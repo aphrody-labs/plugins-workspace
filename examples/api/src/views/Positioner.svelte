@@ -3,7 +3,7 @@
     moveWindow,
     moveWindowConstrained,
     Position
-  } from '@tauri-apps/plugin-positioner'
+  } from '@aphrody/plugin-positioner'
 
   export let onMessage
 

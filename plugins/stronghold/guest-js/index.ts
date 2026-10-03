@@ -9,7 +9,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * The name of a Stronghold client, either as a UTF-8 string or as its raw byte representation.
@@ -172,7 +172,7 @@ export class Location {
    *
    * @example
    * ```typescript
-   * import { Location } from '@tauri-apps/plugin-stronghold';
+   * import { Location } from '@aphrody/plugin-stronghold';
    * const location = new Location('Generic', { vault: 'my-vault', record: 'my-record' });
    * ```
    *
@@ -189,7 +189,7 @@ export class Location {
    *
    * @example
    * ```typescript
-   * import { Location } from '@tauri-apps/plugin-stronghold';
+   * import { Location } from '@aphrody/plugin-stronghold';
    * const location = Location.generic('my-vault', 'my-record');
    * ```
    *
@@ -209,7 +209,7 @@ export class Location {
    *
    * @example
    * ```typescript
-   * import { Location } from '@tauri-apps/plugin-stronghold';
+   * import { Location } from '@aphrody/plugin-stronghold';
    * const location = Location.counter('my-vault', 0);
    * ```
    *
@@ -396,7 +396,7 @@ export class Client {
    *
    * @example
    * ```typescript
-   * import { Client } from '@tauri-apps/plugin-stronghold';
+   * import { Client } from '@aphrody/plugin-stronghold';
    * const client = new Client('/path/to/snapshot.hold', 'my-client');
    * ```
    *
@@ -414,7 +414,7 @@ export class Client {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.createClient('my-client');
    * const vault = client.getVault('my-vault');
@@ -432,7 +432,7 @@ export class Client {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.createClient('my-client');
    * const store = client.getStore();
@@ -463,7 +463,7 @@ export class Store {
    *
    * @example
    * ```typescript
-   * import { Store } from '@tauri-apps/plugin-stronghold';
+   * import { Store } from '@aphrody/plugin-stronghold';
    * const store = new Store('/path/to/snapshot.hold', 'my-client');
    * ```
    *
@@ -480,7 +480,7 @@ export class Store {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.createClient('my-client');
    * const value = await client.getStore().get('my-key');
@@ -503,7 +503,7 @@ export class Store {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.createClient('my-client');
    * const data = Array.from(new TextEncoder().encode('Hello, World!'));
@@ -534,7 +534,7 @@ export class Store {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.createClient('my-client');
    * await client.getStore().remove('my-key');
@@ -576,7 +576,7 @@ export class Vault extends ProcedureExecutor {
    *
    * @example
    * ```typescript
-   * import { Vault } from '@tauri-apps/plugin-stronghold';
+   * import { Vault } from '@aphrody/plugin-stronghold';
    * const vault = new Vault('/path/to/snapshot.hold', 'my-client', 'my-vault');
    * ```
    *
@@ -601,7 +601,7 @@ export class Vault extends ProcedureExecutor {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.createClient('my-client');
    * const secret = Array.from(new TextEncoder().encode('secret value'));
@@ -628,7 +628,7 @@ export class Vault extends ProcedureExecutor {
    *
    * @example
    * ```typescript
-   * import { Stronghold, Location } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold, Location } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.createClient('my-client');
    * await client
@@ -670,8 +670,8 @@ export class Stronghold {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
-   * import { appDataDir } from '@tauri-apps/api/path';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
+   * import { appDataDir } from '@aphrody/api/path';
    * const stronghold = await Stronghold.load(`${await appDataDir()}/vault.hold`, 'password');
    * ```
    *
@@ -691,7 +691,7 @@ export class Stronghold {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * await stronghold.unload();
    * ```
@@ -708,7 +708,7 @@ export class Stronghold {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.loadClient('my-client');
    * ```
@@ -728,7 +728,7 @@ export class Stronghold {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * let client;
    * try {
@@ -753,7 +753,7 @@ export class Stronghold {
    *
    * @example
    * ```typescript
-   * import { Stronghold } from '@tauri-apps/plugin-stronghold';
+   * import { Stronghold } from '@aphrody/plugin-stronghold';
    * const stronghold = await Stronghold.load('/path/to/snapshot.hold', 'password');
    * const client = await stronghold.createClient('my-client');
    * await client.getStore().insert('my-key', [1, 2, 3]);

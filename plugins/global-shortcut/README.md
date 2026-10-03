@@ -35,11 +35,11 @@ tauri-plugin-global-shortcut = { git = "https://github.com/tauri-apps/plugins-wo
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-global-shortcut
+pnpm add @aphrody/plugin-global-shortcut
 # or
-npm add @tauri-apps/plugin-global-shortcut
+npm add @aphrody/plugin-global-shortcut
 # or
-yarn add @tauri-apps/plugin-global-shortcut
+yarn add @aphrody/plugin-global-shortcut
 ```
 
 ## Usage
@@ -84,7 +84,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript bindings:
 
 ```javascript
-import { register } from '@tauri-apps/plugin-global-shortcut'
+import { register } from '@aphrody/plugin-global-shortcut'
 await register('CommandOrControl+Shift+C', (event) => {
   if (event.state === 'Pressed') {
     console.log('Shortcut triggered')

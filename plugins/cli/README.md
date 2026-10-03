@@ -35,11 +35,11 @@ tauri-plugin-cli = { git = "https://github.com/tauri-apps/plugins-workspace", br
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-cli
+pnpm add @aphrody/plugin-cli
 # or
-npm add @tauri-apps/plugin-cli
+npm add @aphrody/plugin-cli
 # or
-yarn add @tauri-apps/plugin-cli
+yarn add @aphrody/plugin-cli
 ```
 
 ## Usage
@@ -64,7 +64,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { getMatches } from '@tauri-apps/plugin-cli'
+import { getMatches } from '@aphrody/plugin-cli'
 const matches = await getMatches()
 if (matches.subcommand?.name === 'run') {
   // `./your-app run $ARGS` was executed

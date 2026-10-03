@@ -4,7 +4,7 @@
     impactFeedback,
     notificationFeedback,
     selectionFeedback
-  } from '@tauri-apps/plugin-haptics'
+  } from '@aphrody/plugin-haptics'
 
   export let onMessage
 </script>

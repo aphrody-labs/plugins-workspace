@@ -8,7 +8,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * The resolution of a single CLI argument match.
@@ -57,7 +57,7 @@ interface CliMatches {
  *
  * @example
  * ```typescript
- * import { getMatches } from '@tauri-apps/plugin-cli';
+ * import { getMatches } from '@aphrody/plugin-cli';
  * const matches = await getMatches();
  * if (matches.subcommand?.name === 'run') {
  *   // `./your-app run $ARGS` was executed

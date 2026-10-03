@@ -1,6 +1,6 @@
 <script>
-  import { getName, getVersion, getTauriVersion } from "@tauri-apps/api/app";
-  import { relaunch, exit } from "@tauri-apps/plugin-process";
+  import { getName, getVersion, getTauriVersion } from "@aphrody/api/app";
+  import { relaunch, exit } from "@aphrody/plugin-process";
 
   let version = "1.0.0";
   let tauriVersion = "1.0.0";
@@ -27,7 +27,7 @@
 
 <p>
   This is a demo of Tauri's API capabilities using the <code
-    >@tauri-apps/api</code
+    >@aphrody/api</code
   > package. It's used as the main validation app, serving as the test bed of our
   development process. In the future, this app will be used on Tauri's integration
   tests.

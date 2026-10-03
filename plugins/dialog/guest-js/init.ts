@@ -9,7 +9,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 window.alert = function (message: string) {
   void invoke('plugin:dialog|message', {

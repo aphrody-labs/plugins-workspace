@@ -1,5 +1,5 @@
 <script>
-  import { authenticate } from "@tauri-apps/plugin-biometric";
+  import { authenticate } from "@aphrody/plugin-biometric";
 
   export let onMessage;
   let allowDeviceCredential = true;

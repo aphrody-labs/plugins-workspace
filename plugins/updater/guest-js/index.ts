@@ -9,7 +9,7 @@
  * @module
  */
 
-import { invoke, Channel, Resource } from '@tauri-apps/api/core'
+import { invoke, Channel, Resource } from '@aphrody/api/core'
 
 /** Options used when checking for updates */
 interface CheckOptions {
@@ -103,7 +103,7 @@ class Update extends Resource {
    *
    * @example
    * ```typescript
-   * import { check } from '@tauri-apps/plugin-updater';
+   * import { check } from '@aphrody/plugin-updater';
    * // the update instance is created for you by `check`
    * const update = await check();
    * ```
@@ -122,7 +122,7 @@ class Update extends Resource {
    *
    * @example
    * ```typescript
-   * import { check } from '@tauri-apps/plugin-updater';
+   * import { check } from '@aphrody/plugin-updater';
    *
    * const update = await check();
    * if (update) {
@@ -167,7 +167,7 @@ class Update extends Resource {
    *
    * @example
    * ```typescript
-   * import { check } from '@tauri-apps/plugin-updater';
+   * import { check } from '@aphrody/plugin-updater';
    *
    * const update = await check();
    * if (update) {
@@ -203,7 +203,7 @@ class Update extends Resource {
    *
    * @example
    * ```typescript
-   * import { check } from '@tauri-apps/plugin-updater';
+   * import { check } from '@aphrody/plugin-updater';
    *
    * const update = await check();
    * if (update) {
@@ -237,7 +237,7 @@ class Update extends Resource {
    *
    * @example
    * ```typescript
-   * import { check } from '@tauri-apps/plugin-updater';
+   * import { check } from '@aphrody/plugin-updater';
    *
    * const update = await check();
    * if (update) {
@@ -256,7 +256,7 @@ class Update extends Resource {
  *
  * @example
  * ```typescript
- * import { check } from '@tauri-apps/plugin-updater';
+ * import { check } from '@aphrody/plugin-updater';
  *
  * const update = await check();
  * if (update) {

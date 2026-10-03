@@ -8,7 +8,7 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
+import { invoke } from '@aphrody/api/core'
 
 /**
  * Extension filters for the file dialog.
@@ -325,7 +325,7 @@ type OpenDialogReturn<T extends OpenDialogOptions> = T['directory'] extends true
  * You can save it to the filesystem using [tauri-plugin-persisted-scope](https://github.com/tauri-apps/tauri-plugin-persisted-scope).
  * @example
  * ```typescript
- * import { open } from '@tauri-apps/plugin-dialog';
+ * import { open } from '@aphrody/plugin-dialog';
  * // Open a selection dialog for image files
  * const selected = await open({
  *   multiple: true,
@@ -345,8 +345,8 @@ type OpenDialogReturn<T extends OpenDialogOptions> = T['directory'] extends true
  *
  * @example
  * ```typescript
- * import { open } from '@tauri-apps/plugin-dialog';
- * import { appDir } from '@tauri-apps/api/path';
+ * import { open } from '@aphrody/plugin-dialog';
+ * import { appDir } from '@aphrody/api/path';
  * // Open a selection dialog for directories
  * const selected = await open({
  *   directory: true,
@@ -389,7 +389,7 @@ async function open<T extends OpenDialogOptions>(
  * You can save it to the filesystem using [tauri-plugin-persisted-scope](https://github.com/tauri-apps/tauri-plugin-persisted-scope).
  * @example
  * ```typescript
- * import { save } from '@tauri-apps/plugin-dialog';
+ * import { save } from '@aphrody/plugin-dialog';
  * const filePath = await save({
  *   filters: [{
  *     name: 'Image',
@@ -435,7 +435,7 @@ async function messageCommand(message: string, options?: MessageDialogOptions) {
  * Shows a message dialog with an `Ok` button.
  * @example
  * ```typescript
- * import { message } from '@tauri-apps/plugin-dialog';
+ * import { message } from '@aphrody/plugin-dialog';
  * await message('Tauri is awesome', 'Tauri');
  * await message('File not found', { title: 'Tauri', kind: 'error' });
  * ```
@@ -463,7 +463,7 @@ async function message(
  *
  * @example
  * ```typescript
- * import { ask } from '@tauri-apps/plugin-dialog';
+ * import { ask } from '@aphrody/plugin-dialog';
  * const yes = await ask('Are you sure?', 'Tauri');
  * const yes2 = await ask('This action cannot be reverted. Are you sure?', { title: 'Tauri', kind: 'warning' });
  * ```
@@ -500,7 +500,7 @@ async function ask(
  *
  * @example
  * ```typescript
- * import { confirm } from '@tauri-apps/plugin-dialog';
+ * import { confirm } from '@aphrody/plugin-dialog';
  * const confirmed = await confirm('Are you sure?', 'Tauri');
  * const confirmed2 = await confirm('This action cannot be reverted. Are you sure?', { title: 'Tauri', kind: 'warning' });
  * ```

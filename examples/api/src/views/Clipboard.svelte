@@ -1,8 +1,8 @@
 <script>
-  import * as clipboard from '@tauri-apps/plugin-clipboard-manager'
-  import { open } from '@tauri-apps/plugin-dialog'
+  import * as clipboard from '@aphrody/plugin-clipboard-manager'
+  import { open } from '@aphrody/plugin-dialog'
   import { arrayBufferToBase64 } from '../lib/utils'
-  import { readFile } from '@tauri-apps/plugin-fs'
+  import { readFile } from '@aphrody/plugin-fs'
 
   export let onMessage
   let text = 'clipboard message'

@@ -1,6 +1,6 @@
 <script>
-  import { appDataDir, resolve } from '@tauri-apps/api/path'
-  import { LazyStore } from '@tauri-apps/plugin-store'
+  import { appDataDir, resolve } from '@aphrody/api/path'
+  import { LazyStore } from '@aphrody/plugin-store'
   import { onMount } from 'svelte'
 
   let { onMessage } = $props()

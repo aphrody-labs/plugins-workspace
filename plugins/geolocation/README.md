@@ -36,11 +36,11 @@ You can install the JavaScript Guest bindings using your preferred JavaScript pa
 <!-- Add the branch for installations using git! -->
 
 ```sh
-pnpm add @tauri-apps/plugin-geolocation
+pnpm add @aphrody/plugin-geolocation
 # or
-npm add @tauri-apps/plugin-geolocation
+npm add @aphrody/plugin-geolocation
 # or
-yarn add @tauri-apps/plugin-geolocation
+yarn add @aphrody/plugin-geolocation
 ```
 
 ## Setting up
@@ -105,7 +105,7 @@ import {
   requestPermissions,
   getCurrentPosition,
   watchPosition
-} from '@tauri-apps/plugin-geolocation'
+} from '@aphrody/plugin-geolocation'
 
 let permissions = await checkPermissions()
 if (

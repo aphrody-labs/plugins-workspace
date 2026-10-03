@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { check, Update } from '@tauri-apps/plugin-updater'
-  import { relaunch } from '@tauri-apps/plugin-process'
+  import { check, Update } from '@aphrody/plugin-updater'
+  import { relaunch } from '@aphrody/plugin-process'
   import { onDestroy } from 'svelte'
 
   let { onMessage } = $props()

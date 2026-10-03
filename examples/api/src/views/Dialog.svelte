@@ -6,8 +6,8 @@
     message,
     type PickerMode,
     type FileAccessMode
-  } from '@tauri-apps/plugin-dialog'
-  import { readFile } from '@tauri-apps/plugin-fs'
+  } from '@aphrody/plugin-dialog'
+  import { readFile } from '@aphrody/plugin-fs'
   import type { ViewProps } from '../App.svelte'
 
   let { onMessage }: ViewProps = $props()

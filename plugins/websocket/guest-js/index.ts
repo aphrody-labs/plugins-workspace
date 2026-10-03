@@ -8,7 +8,7 @@
  * @module
  */
 
-import { invoke, Channel } from '@tauri-apps/api/core'
+import { invoke, Channel } from '@aphrody/api/core'
 
 /**
  * Configuration used to open a WebSocket connection, forwarded to the underlying `tungstenite` client.
@@ -98,7 +98,7 @@ export default class WebSocket {
    * @param listeners The set of callbacks to notify when a message is received.
    * @example
    * ```typescript
-   * import WebSocket from '@tauri-apps/plugin-websocket';
+   * import WebSocket from '@aphrody/plugin-websocket';
    *
    * // internally used by `WebSocket.connect`; prefer calling that instead
    * const ws = await WebSocket.connect('wss://example.com');
@@ -113,7 +113,7 @@ export default class WebSocket {
    * Opens a WebSocket connection to the given URL.
    * @example
    * ```typescript
-   * import WebSocket from '@tauri-apps/plugin-websocket';
+   * import WebSocket from '@aphrody/plugin-websocket';
    *
    * const ws = await WebSocket.connect('wss://example.com');
    * ```
@@ -153,7 +153,7 @@ export default class WebSocket {
    * an error message (as a `'Close'` message) when the underlying stream fails.
    * @example
    * ```typescript
-   * import WebSocket from '@tauri-apps/plugin-websocket';
+   * import WebSocket from '@aphrody/plugin-websocket';
    *
    * const ws = await WebSocket.connect('wss://example.com');
    * const unlisten = ws.addListener((message) => console.log(message));
@@ -174,7 +174,7 @@ export default class WebSocket {
    * Sends a message through the WebSocket connection.
    * @example
    * ```typescript
-   * import WebSocket from '@tauri-apps/plugin-websocket';
+   * import WebSocket from '@aphrody/plugin-websocket';
    *
    * const ws = await WebSocket.connect('wss://example.com');
    * await ws.send('Hello World');
@@ -209,7 +209,7 @@ export default class WebSocket {
    * Closes the WebSocket connection, sending a normal closure (`1000`) close frame to the server.
    * @example
    * ```typescript
-   * import WebSocket from '@tauri-apps/plugin-websocket';
+   * import WebSocket from '@aphrody/plugin-websocket';
    *
    * const ws = await WebSocket.connect('wss://example.com');
    * await ws.disconnect();

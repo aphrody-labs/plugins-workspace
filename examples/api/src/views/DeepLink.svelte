@@ -5,7 +5,7 @@
     register,
     unregister,
     isRegistered
-  } from '@tauri-apps/plugin-deep-link'
+  } from '@aphrody/plugin-deep-link'
   import { onMount, onDestroy } from 'svelte'
 
   export let onMessage

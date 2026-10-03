@@ -1,6 +1,6 @@
 <script>
-  import * as opener from '@tauri-apps/plugin-opener'
-  import { platform } from '@tauri-apps/plugin-os'
+  import * as opener from '@aphrody/plugin-opener'
+  import { platform } from '@aphrody/plugin-os'
 
   export let onMessage
 

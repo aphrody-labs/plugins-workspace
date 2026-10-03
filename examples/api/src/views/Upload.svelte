@@ -1,8 +1,8 @@
 <script>
-  import { download, upload, HttpMethod } from '@tauri-apps/plugin-upload'
-  import { open } from '@tauri-apps/plugin-dialog'
+  import { download, upload, HttpMethod } from '@aphrody/plugin-upload'
+  import { open } from '@aphrody/plugin-dialog'
   import { JsonView } from '@zerodevx/svelte-json-view'
-  import { appDataDir } from '@tauri-apps/api/path'
+  import { appDataDir } from '@aphrody/api/path'
   import { onMount } from 'svelte'
 
   export let onMessage

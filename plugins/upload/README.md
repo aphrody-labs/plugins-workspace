@@ -35,11 +35,11 @@ tauri-plugin-upload = { git = "https://github.com/tauri-apps/plugins-workspace",
 You can install the JavaScript Guest bindings using your preferred JavaScript package manager:
 
 ```sh
-pnpm add @tauri-apps/plugin-upload
+pnpm add @aphrody/plugin-upload
 # or
-npm add @tauri-apps/plugin-upload
+npm add @aphrody/plugin-upload
 # or
-yarn add @tauri-apps/plugin-upload
+yarn add @aphrody/plugin-upload
 ```
 
 ## Usage
@@ -60,7 +60,7 @@ fn main() {
 Afterwards all the plugin's APIs are available through the JavaScript guest bindings:
 
 ```javascript
-import { upload, HttpMethod } from '@tauri-apps/plugin-upload'
+import { upload, HttpMethod } from '@aphrody/plugin-upload'
 
 // Upload with default POST method
 upload(
@@ -85,7 +85,7 @@ upload(
 ```
 
 ```javascript
-import { download } from '@tauri-apps/plugin-upload'
+import { download } from '@aphrody/plugin-upload'
 
 download(
   'https://example.com/file-download-link',

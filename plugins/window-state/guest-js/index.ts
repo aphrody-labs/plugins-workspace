@@ -8,8 +8,8 @@
  * @module
  */
 
-import { invoke } from '@tauri-apps/api/core'
-import { type WindowLabel, getCurrentWindow } from '@tauri-apps/api/window'
+import { invoke } from '@aphrody/api/core'
+import { type WindowLabel, getCurrentWindow } from '@aphrody/api/window'
 
 /**
  * Flags controlling which parts of a window's state are saved and restored.
@@ -37,7 +37,7 @@ export enum StateFlags {
  *
  * @example
  * ```typescript
- * import { saveWindowState, StateFlags } from '@tauri-apps/plugin-window-state';
+ * import { saveWindowState, StateFlags } from '@aphrody/plugin-window-state';
  *
  * await saveWindowState(StateFlags.ALL);
  * ```
@@ -54,7 +54,7 @@ async function saveWindowState(flags?: StateFlags): Promise<void> {
  *
  * @example
  * ```typescript
- * import { restoreState, StateFlags } from '@tauri-apps/plugin-window-state';
+ * import { restoreState, StateFlags } from '@aphrody/plugin-window-state';
  *
  * await restoreState('main', StateFlags.ALL);
  * ```
@@ -75,7 +75,7 @@ async function restoreState(
  *
  * @example
  * ```typescript
- * import { restoreStateCurrent, StateFlags } from '@tauri-apps/plugin-window-state';
+ * import { restoreStateCurrent, StateFlags } from '@aphrody/plugin-window-state';
  *
  * await restoreStateCurrent(StateFlags.ALL);
  * ```
@@ -91,7 +91,7 @@ async function restoreStateCurrent(flags?: StateFlags): Promise<void> {
  *
  * @example
  * ```typescript
- * import { filename } from '@tauri-apps/plugin-window-state';
+ * import { filename } from '@aphrody/plugin-window-state';
  *
  * const name = await filename();
  * ```

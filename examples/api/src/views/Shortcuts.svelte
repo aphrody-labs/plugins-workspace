@@ -3,7 +3,7 @@
   import {
     register as registerShortcut,
     unregister as unregisterShortcut,
-  } from "@tauri-apps/plugin-global-shortcut";
+  } from "@aphrody/plugin-global-shortcut";
 
   export let onMessage;
   const shortcuts = writable([]);
